@@ -3,8 +3,7 @@ title: RSA Challenges
 categories:
 - Cryptohack
 excerpt: |
-  blah blah
-  blah bah
+  Writeup of Cryptohack RSA Challenges
 ---
 
 main main main
