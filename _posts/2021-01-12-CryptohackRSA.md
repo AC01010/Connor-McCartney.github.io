@@ -7,7 +7,7 @@ excerpt: |
 ---
 
 
-This is my writeup of the [A link](https://cryptohack.org/challenges/rsa "Cryptohack RSA challenges.")
+This is my writeup of the [Cryptohack RSA challenges.](https://cryptohack.org/challenges/rsa)
  
  
 Next line
