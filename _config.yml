@@ -125,8 +125,8 @@ navigation_header:
   url: /
 - title: Elements
   url: /elements/
-- title: Writeups
-  url: /writeups/
+- title: Categories
+  url: /categories/
 
 navigation_footer:
 - title: Created by David Darnes
