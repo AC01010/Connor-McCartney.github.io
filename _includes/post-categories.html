@@ -7,7 +7,7 @@
         {% assign has_categories = true %}
         <li class="item  item--post">
           <article class="article  article--post  typeset">
-            <h4><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h4>
+            <h6><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h6>
             {% include post-meta.html %}
             {{ page.excerpt | truncatewords: 60 | markdownify }}
           </article>
