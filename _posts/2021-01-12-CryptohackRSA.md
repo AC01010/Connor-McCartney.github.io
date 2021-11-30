@@ -2,8 +2,6 @@
 title: RSA
 categories:
 - Cryptohack
-excerpt: |
-  My writeup of cryptohack RSA challenges. 
 ---
 
 
