@@ -1,11 +1,11 @@
 ---
-title: RSA
+title: RSA Writeups
 categories:
-- Cryptohack
+- CryptoHack
 ---
 
 
-This is my writeup of the [Cryptohack RSA challenges.](https://cryptohack.org/challenges/rsa)
+This is my writeup of the [CryptoHack RSA challenges.](https://cryptohack.org/challenges/rsa)
  
  
 Next line
