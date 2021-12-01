@@ -35,7 +35,7 @@ We are given the number 12 to encrypt, usually this is part of a message so let'
 N = p x q = 17 * 23
 
 In RSA, c = m<sup>e</sup> mod N.
-<span style="color:blue">some *This is Blue italic.* text
+
 We can calculate this in python:
 ```
 
@@ -48,7 +48,7 @@ print(c)
 
 ```
 This gives c = 301.
-</span>
+
 ### RSA Starter 3
 Given p = 857504083339712752489993810777 and q = 1029224947942998075080348647219, what is the Euler totient of N?
 
