@@ -25,7 +25,7 @@ message_hexdump
 
 SOLUTION
 
-To create the message, run "xxd -r x > message"
+To create the message, run "xxd -r message_hexdump > message"
 
 message
 ```
