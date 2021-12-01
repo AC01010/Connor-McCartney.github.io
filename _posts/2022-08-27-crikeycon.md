@@ -35,7 +35,48 @@ print(int(n.replace(":", ""), 16))
 ```
 This gives n = 4290639633996267716557385332009265040461674354008108198271. <br>
 Factoring with http://factordb.com/ gives p = 63539306977486994912339790113 and <br>
-q = 67527328170521450591465143967.
+q = 67527328170521450591465143967. <br>
+
+Then I generated the public key. 
+```python
+import pyasn1.codec.der.encoder #pip install pyasn1
+import pyasn1.type.univ
+import base64
+
+n = 4290639633996267716557385332009265040461674354008108198271
+e = 65537
+p = 63539306977486994912339790113
+q = 67527328170521450591465143967
+phi = (p-1)*(q-1)
+d = pow(e, -1, phi)
+
+#https://crypto.stackexchange.com/questions/25498/how-to-create-a-pem-file-for-storing-an-rsa-key/25499#25499
+dP = d % (p-1)
+dQ = d % (q-1)
+qInv = pow(q, p-2, p)
+
+def pempriv(n, e, d, p, q, dP, dQ, qInv):
+    template = '-----BEGIN RSA PRIVATE KEY-----\n{}-----END RSA PRIVATE KEY-----\n'
+    seq = pyasn1.type.univ.Sequence()
+    for i,x in enumerate((0, n, e, d, p, q, dP, dQ, qInv)):
+        seq.setComponentByPosition(i, pyasn1.type.univ.Integer(x))
+    der = pyasn1.codec.der.encoder.encode(seq)
+    return template.format(base64.encodebytes(der).decode('ascii'))
+
+
+print(pempriv(n, e, d, p, q, dP, dQ, qInv))
+```
+
+I saved this as priv.key
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIGHAgEAAhkArvxeMo1FSMFUBqvWSTTrcdycW5nLOml/AgMBAAECGE2ZXxCd83azPVcEBnR7xuCr
+ITHTBSxMQQINAM1Oe50pJii/6FOJIQINANoxS/M7JfZ+ZJp+nwIMDXrctOnxvnUzPODhAg0AmlRy
+BynYEUCXQhu7Ag0AnZHcrWk2J5k5z8ym
+-----END RSA PRIVATE KEY-----
+```
+Then decrypted by running "cat message | openssl rsautl -decrypt -inkey priv.key". <br>
+This gave flag{gudk1d}.
 
 ### Billy is a Shadow of his Former Self
 
