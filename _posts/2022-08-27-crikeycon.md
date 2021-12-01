@@ -17,12 +17,21 @@ fwIDAQAB
 -----END PUBLIC KEY-----
 ```
 
+message_hexdump
+```
+00000000: 6524 62e6 3967 78bd e1d4 4388 97da 60ce  e$b.9gx...C...`.
+00000010: 4ed2 d1a0 bd2c 2616                      N....,&.
+```
+
+SOLUTION
+
+To create the message, run "xxd -r x > message"
+
 message
 ```
 e$bæ9gxœáÔCÚ`ÎNÒÑ œ,&
 ```
 
-SOLUTION
 
 Run "openssl rsa -text -pubin -in pub.key" <br>
 Exponent: 65537 (0x10001) <br>
