@@ -115,3 +115,6 @@ d = 1117590121064301426254822247344953309137884826949051885047439968169054728166
 
 SOLUTION
 
+First hash crypto{Immut4ble_m3ssag1ng} using sha256. <br>
+I used the online tool https://emn178.github.io/online-tools/sha256.html. <br>
+Now we have a hash - 99b4c7bb814cc630c4199e4814ffed85a835f64ffc82aadaa6388d9df9aeb2cb.
