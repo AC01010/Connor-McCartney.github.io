@@ -38,14 +38,12 @@ In RSA, c = m<sup>e</sup> mod N.
 
 We can calculate this in python:
 ```
-
 m = 12
 N = 17*23
 e = 65537
 
 c = pow(m, e, N)
 print(c)
-
 ```
 This gives c = 301.
 
