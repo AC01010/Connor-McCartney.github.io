@@ -147,7 +147,7 @@ body {
 
 .aside {
   @include breakpoint(break-1) {
-    max-width: 0%;  //34%
+    max-width: 5%;  //34%
     margin-left: 4%;
     @include flex(1, 0, auto);
     opacity: 0.5;
