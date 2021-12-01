@@ -1,5 +1,5 @@
 ---
-title: RSA Writeups
+title: RSA Writeups Starter
 categories:
 - CryptoHack
 excerpt: |
