@@ -17,7 +17,9 @@ Find the solution to 101<sup>17</sup> mod 22663.
 SOLUTION <br>
 Use the python pow function - pow(base, exponent, modulus)
 <br>
-`print(pow(101, 17, 22663))`
+```python
+print(pow(101, 17, 22663))
+```
 <br>
 This gives 19906.
 
