@@ -28,4 +28,29 @@ id is 6 means it is a SHA-512 hash. We can pass the whole hash into hashcat:
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 And we find the password! "starwars"
