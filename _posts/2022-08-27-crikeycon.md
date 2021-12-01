@@ -26,4 +26,6 @@ id is 6 means it is a SHA-512 hash. We can pass the whole hash into hashcat:
 
 {% include figure.html image="https://i.postimg.cc/Yq0fHFZd/hashcat2.png" position="left" width="1064" height="733" %}
 
+<br>
+<br>
 And we find the password! "starwars"
