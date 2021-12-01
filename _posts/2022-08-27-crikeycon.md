@@ -24,4 +24,4 @@ id is 6 means it is a SHA-512 hash. We can pass the whole hash into hashcat:
 
 {% include figure.html image="https://i.postimg.cc/dQ4mp6H7/hashcat1.png" position="left" width="300" height="800" %}
 
-
+{% include figure.html image="https://i.postimg.cc/Yq0fHFZd/hashcat2.png" position="left" width="300" height="800" %}
