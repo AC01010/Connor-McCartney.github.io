@@ -11,8 +11,6 @@ This is my writeup of the [CryptoHack RSA challenges](https://cryptohack.org/cha
 
 ### RSA Starter 1
 
-QUESTION
-
 Find the solution to 101<sup>17</sup> mod 22663.
 
 
@@ -25,8 +23,6 @@ Use the python pow function - pow(base, exponent, modulus)
 This gives 19906.
 
 ### RSA Starter 2
-
-QUESTION
 
 "Encrypt" the number 12 using the exponent e = 65537 and the primes p = 17 and q = 23. What number do you get as the ciphertext?
 
