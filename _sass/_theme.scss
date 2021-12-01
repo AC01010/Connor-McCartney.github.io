@@ -10,7 +10,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 2200px;
   margin: 0 auto;
 }
 
@@ -52,7 +52,7 @@ body {
   background-position: center;
   .container {
     min-height: 35vh;
-    max-width: 80%;
+    max-width: 60%;
     @include flex-direction(column);
     @include justify-content(center);
   }
