@@ -23,7 +23,7 @@ This gives 19906.
 
 ### RSA Starter 2
 
-"Encrypt" the number 12 using the exponent e = 65537 and the primes p = 17 and q = 23. What number do you get as the ciphertext?
+"Encrypt" the number 12 using the exponent e = 65537 and the primes p = 17 and <br>q = 23. What number do you get as the ciphertext?
 
 
 SOLUTION
@@ -48,7 +48,7 @@ print(c)
 This gives c = 301.
 
 ### RSA Starter 3
-Given p = 857504083339712752489993810777 and q = 1029224947942998075080348647219, what is the Euler totient of N?
+Given p = 857504083339712752489993810777 and <br>q = 1029224947942998075080348647219, what is the Euler totient of N?
 
 SOLUTION
 
@@ -60,7 +60,7 @@ q = 1029224947942998075080348647219
 phi = (p - 1) * (q - 1)
 print(phi)
 ```
-This gives phi = 882564595536224140639625987657529300394956519977044270821168.
+This gives <br>phi = 882564595536224140639625987657529300394956519977044270821168.
 
 ### RSA Starter 4
 
@@ -73,4 +73,28 @@ What is the private key d?
 
 SOLUTION
 
-bleh
+In RSA, d = e<sup>-1</sup> mod phi(N).
+The numbers are the same as the last question, so we already know phi.
+```python
+phi = 882564595536224140639625987657529300394956519977044270821168 
+e = 65537
+d = pow(e, -1, phi)
+print(d)
+```
+This gives <br>d = 121832886702415731577073962957377780195510499965398469843281 
+
+### RSA Starter 5
+
+Given
+
+N = 882564595536224140639625987659416029426239230804614613279163 
+
+e = 65537
+
+c = 77578995801157823671636298847186723593814843845525223303932
+
+d from previous challenge
+
+(d = 121832886702415731577073962957377780195510499965398469843281)
+
+Decrypt the cipher text. 
