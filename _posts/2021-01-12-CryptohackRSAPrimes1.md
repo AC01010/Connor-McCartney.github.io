@@ -160,7 +160,7 @@ And the text "Using one prime factor was definitely a bad idea so I'll try using
 SOLUTION
 
 Again it's easiest to just use http://factordb.com/. 
-Then compute phi as (p-1)x(q-1)(r-1)... for all the primes. 
+Then compute phi as (p-1)x(q-1)x(r-1)... for all the primes. 
 
 ```python
 from Crypto.Util.number import long_to_bytes
