@@ -49,3 +49,7 @@ This gives c = 301.
 
 ### RSA Starter 3
 Given p = 857504083339712752489993810777 and q = 1029224947942998075080348647219, what is the Euler totient of N?
+
+SOLUTION
+
+bleh
