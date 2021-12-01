@@ -37,16 +37,16 @@ N = p x q = 17 * 23
 In RSA, c = m<sup>e</sup> mod N.
 
 We can calculate this in python:
-<span style="color:blue">
 ```
+<span style="color:blue">some *This is Blue italic.* text
 m = 12
 N = 17*23
 e = 65537
 
 c = pow(m, e, N)
 print(c)
-```
 </span>
+```
 This gives c = 301.
 
 ### RSA Starter 3
