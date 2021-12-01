@@ -52,7 +52,8 @@ Given p = 857504083339712752489993810777 and q = 1029224947942998075080348647219
 
 SOLUTION
 
-The Euler's totient of N, also known as phi or \varphi (n) can be calculated as (p - 1) x (q - 1).
+The Euler's totient of N, also known as phi(N) can be calculated as <br> 
+phi = (p - 1) x (q - 1).
 ```python
 p = 857504083339712752489993810777
 q = 1029224947942998075080348647219
