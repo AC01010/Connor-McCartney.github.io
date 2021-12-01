@@ -318,6 +318,7 @@ a {
   // Code block.
   code, pre {
     background-color: $codeBackgroundColour;
+    color: black;
     font-family: unquote(map-get($monospacetype, font-family));
   }
 
