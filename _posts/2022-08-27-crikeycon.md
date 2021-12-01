@@ -22,6 +22,6 @@ and hash is ExR7Lh4OeLBP3173vBPWmgp/QHlaQu3U/PcNURnHalelr/l34hw.2kifKIPNkUdhiLk/
 
 id is 6 means it is a SHA-512 hash. We can pass the whole hash into hashcat:
 
-{% include figure.html image="https://picsum.photos/600/800?image=894" caption="Left aligned image" position="left" width="300" height="800" %}
+{% include figure.html image="https://picsum.photos/600/800?image=894" position="left" width="300" height="800" %}
 
 
