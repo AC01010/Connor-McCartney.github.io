@@ -126,7 +126,7 @@ And the message "It was taking forever to get a 2048 bit prime, so I just genera
 
 SOLUTION
 
-Usually n = p x q, but here q = p so n is a square number. We can find the square root of n, this is much faster than finding prime factors. 
+Usually n = p x q, but here there is just one prime so q = p and n = p<sup>2</sup>. We can find the square root of n, this is much faster than finding prime factors. 
 
 If p is prime and k ≥ 1, then phi(p<sup>k</sup>) = p<sup>k-1</sup> x (p-1). <br>
 Since n = p<sup>2</sup>, phi(n) = p<sup>2-1</sup> x (p-1) = p x (p-1). <br>
