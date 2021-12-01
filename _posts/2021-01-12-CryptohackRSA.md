@@ -27,3 +27,16 @@ This gives 19906.
 
 
 SOLUTION
+We need to calculate the ciphertext number, let's call that c. 
+We are given the number 12 to encrypt, usually this is part of a message so let's call that m. 
+N = p x q = 17 * 23
+In RSA, c = m<sup>e</sup> mod N.
+We can calculate this in python:
+```python
+m = 12
+N = 17*23
+e = 65537
+
+c = pow(m, e, N)
+print(c)
+```
