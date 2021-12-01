@@ -187,4 +187,30 @@ ct = 39207274348578481322317340648475596807303160111338236677373 <br>
 
 SOLUTION
 
-bleh
+We have to figure out what flag is. <br>
+I'll call flag m for consistency with m for message in previous challenges. <br>
+To decrypt the flag, we have to do: <br>
+m = ct<sup>d</sup> mod n <br>
+We have ct and n, so we just have to calculate the private key d. <br>
+n is small so we can factorise using http://factordb.com. <br>
+p = 752708788837165590355094155871 <br>
+q = 986369682585281993933185289261 <br>
+Using p and q we can calculate phi = (p - 1) * (q - 1)<br>
+Using phi we can calculate d = pow(e, -1, phi)<br> 
+Using d we can finally calculate m = pow(ct, d, n)<br>
+But m is an integer, to convert to text we can use Crypto.Util.number long_to_bytes. <br>
+To install this run "pip install pycryptodome".
+
+```python
+from Crypto.Util.number import long_to_bytes
+
+e = 3
+n = 742449129124467073921545687640895127535705902454369756401331 
+ct = 39207274348578481322317340648475596807303160111338236677373 
+p = 752708788837165590355094155871 
+q = 986369682585281993933185289261 
+phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)
+m = pow(ct, d, n)
+print(long_to_bytes(m).decode())
+```
