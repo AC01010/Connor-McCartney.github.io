@@ -16,7 +16,7 @@ Find the solution to 101<sup>17</sup> mod 22663.
 
 SOLUTION <br>
 Use the python pow function - pow(base, exponent, modulus)
-```python
+```python:
 print(pow(101, 17, 22663))
 ```
 This gives 19906.
@@ -32,7 +32,7 @@ We are given the number 12 to encrypt, usually this is part of a message so let'
 N = p x q = 17 * 23
 In RSA, c = m<sup>e</sup> mod N.
 We can calculate this in python:
-```python
+```python:
 m = 12
 N = 17*23
 e = 65537
