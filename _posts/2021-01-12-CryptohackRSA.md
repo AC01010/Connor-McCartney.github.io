@@ -14,8 +14,7 @@ This is my writeup of the [CryptoHack RSA challenges](https://cryptohack.org/cha
 Find the solution to 101<sup>17</sup> mod 22663.
 
 
-SOLUTION
-
+SOLUTION <br>
 Use the python pow function - pow(base, exponent, modulus)
 <br>
 `print(pow(101, 17, 22663))`
