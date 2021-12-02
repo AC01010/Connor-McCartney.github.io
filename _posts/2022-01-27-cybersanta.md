@@ -24,6 +24,31 @@ SOLUTION
 
 n1 = n2 so we can use common modulus attack. 
 ```python
+from Crypto.Util.number import long_to_bytes
+from math import gcd
 
+n_hex = "0xa96e6f96f6aedd5f9f6a169229f11b6fab589bf6361c5268f8217b7fad96708cfbee7857573ac606d7569b44b02afcfcfdd93c21838af933366de22a6116a2a3dee1c0015457c4935991d97014804d3d3e0d2be03ad42f675f20f41ea2afbb70c0e2a79b49789131c2f28fe8214b4506>
+e1_hex = "0x10001"
+e2_hex = "0x23"
+c1_hex = "0x55cfe232610aa54dffcfb346117f0a38c77a33a2c67addf7a0368c93ec5c3e1baec9d3fe35a123960edc2cbdc238f332507b044d5dee1110f49311efc55a2efd3cf041bfb27130c2266e8dc61e5b99f275665823f584bc6139be4c153cdcf153bf4247fb3f57283a53e8733f982d790>
+c2_hex = "0x79834ce329453d3c4af06789e9dd654e43c16a85d8ba0dfa443aefe1ab4912a12a43b44f58f0b617662a459915e0c92a2429868a6b1d7aaaba500254c7eceba0a2df7144863f1889fab44122c9f355b74e3f357d17f0e693f261c0b9cefd07ca3d1b36563a8a8c985e211f9954ce07d>
+
+n = int(n_hex, 16)
+e1 = int(e1_hex, 16)
+e2 = int(e2_hex, 16)
+c1 = int(c1_hex, 16)
+c2 = int(c2_hex, 16)
+
+def attack(c1, c2, e1, e2, n):
+    s1 = pow(e1, -1, e2)
+    s2 = int((gcd(e1,e2) - e1 * s1) / e2)
+    temp = pow(c2, -1, n)
+    m1 = pow(c1,s1,n)
+    m2 = pow(temp,-s2,n)
+
+    return (m1 * m2) % n
+
+message = attack(c1, c2, e1, e2, n)
+print(long_to_bytes(message).decode())
 ```
 This gives HTB{c0mm0n_m0d_4774ck_15_4n07h3r_cl4ss1c}
