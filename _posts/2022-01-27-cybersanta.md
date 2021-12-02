@@ -24,7 +24,7 @@ SOLUTION
 
 n1 = n2 so we can use common modulus attack. 
 ```python
-from Crypto.Util.number import long_to_bytes
+from Crypto.Util.number import long_to_bytes #pip install pycryptodome
 from math import gcd
 
 n_hex = "0xa96e6f96f6aedd5f9f6a169229f11b6fab589bf6361c5268f8217b7fad96708cfbee7857573ac606d7569b44b02afcfcfdd93c21838af933366de22a6116a2a3dee1c0015457c4935991d97014804d3d3e0d2be03ad42f675f20f41ea2afbb70c0e2a79b49789131c2f28fe8214b4506>
