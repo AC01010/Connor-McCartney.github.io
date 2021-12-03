@@ -119,7 +119,8 @@ Then 1 is subtracted. Therefore, the format of these primes is 2<sup>x</sup> - 1
 
 
 Two are generated for p and q. The key to solving this is that there are very few Mersenne primes. This website has a list of them. <br>
-https://www.mersenne.org/primes/ <br>
+[https://www.mersenne.org/primes/](https://cryptohack.org/challenges/rsa)
+ <br>
 
 Now you could try guessing until you find two that multiply to n. I narrowed it down a bit first: <br>
 n = p x q = (2<sup>a</sup> - 1) x (2<sup>b</sup> - 1) <br>
