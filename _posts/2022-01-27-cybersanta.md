@@ -53,7 +53,7 @@ print(long_to_bytes(message).decode())
 ```
 This gives HTB{c0mm0n_m0d_4774ck_15_4n07h3r_cl4ss1c}
 
-### Common Mistake
+### Toy Management
 This was a web challenge with a simple login portal. 
 
 SOLUTION
