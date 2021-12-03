@@ -57,5 +57,6 @@ This gives HTB{c0mm0n_m0d_4774ck_15_4n07h3r_cl4ss1c}
 This was a web challenge with a simple login portal. 
 
 SOLUTION
+
 To login as admin I used the SQL injection "admin'-- -" as the username. <br>
 This gave the flag HTB{1nj3cti0n_1s_in3v1t4bl3}
