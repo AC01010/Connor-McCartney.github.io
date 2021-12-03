@@ -116,7 +116,7 @@ SOLUTION
 I liked this one. <br> 
 In the get_prime function, 1 is bit-shifted left different amounts of times. Bit-shifting left is the equivalent of multiplying by two. <br>
 Then 1 is subtracted. Therefore, the format of these primes is 2<sup>x</sup> - 1. As I am fascinated with primes, I immediately recognised it as the format of Mersenne primes.<br>
-
+(And after solving, I learned the title was a hint as Mersenne's first name was Marin.)<br>
 
 Two are generated for p and q. The key to solving this is that there are very few Mersenne primes. This website has a list of them. <br>
 [https://www.mersenne.org/primes/](https://cryptohack.org/challenges/rsa)
