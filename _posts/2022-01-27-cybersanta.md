@@ -76,7 +76,6 @@ Now it's time to do some math (modular arithmetic). We have e = (a * l + b) mod 
 First I subtracted b from both sides (because if a = b mod n, then a+x = b+x mod n) <br>
 Next I swapped e-b and a * l (because if a = b mod n, then b = a mod n)    <br>
 Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
-Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
 
 e - b = (a * l) mod 256 <br>
 l * a = (e - b) mod 256   <br>                                        
