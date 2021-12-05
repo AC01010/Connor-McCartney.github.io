@@ -86,4 +86,4 @@ l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256 <br>
 l = ((e - b) * a<sup>-1</sup>) mod 256      <br>
 
 Now we can solve for l, except we don't know a or b so we'll have to bruteforce. My first idea was to decrypt the entire message, but I soon realised that would take too much computing and wasn't feasible. Then I decided to analyse another pdf I had on my computer. <br>
-I ran "xxd random-file.pdf | head" and noticed the first 4 characters of a pdf file are "%PDF". Then wrote a scipt to bruteforce a and b. <br>
+I ran "xxd random-file.pdf | head" and noticed the first 4 characters of a pdf file are "%PDF". Then I wrote a scipt to bruteforce a and b. <br>
