@@ -101,8 +101,7 @@ for a in possible_a:
             with open("encrypted.bin", "rb") as f:
                 letter = ""
                 for i in range(4):
-                    byte = f.read(1)
-                    byte = int.from_bytes(byte, 'big')
+                    byte = byte = int.from_bytes(f.read(1), 'big')
                     l = (pow(a, -1, 256) * (byte - b)) % 256
                     letter += chr(l)
 
@@ -132,7 +131,6 @@ f.close()
 with open('letter.pdf', 'wb') as g:
     g.write(decoded)
 g.close()
-
 ```
-
+This creates the pdf, and when you open it you see the flag.
 
