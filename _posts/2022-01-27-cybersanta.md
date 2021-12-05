@@ -73,10 +73,15 @@ In the file used to encrypt the pdf, we see enc = (a * byte + b) % mod. <br>
 I'll rename enc to e (encrypted) and byte to l (the original letter). It's also given that mod = 256. <br>
 Now it's time to do some math (modular arithmetic). We have e = (a * l + b) mod 256, and need to solve for l. <br>
 
-e - b = (a * l) mod 256          &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                                First I subtracted b from both sides (because if a = b mod n, then a+x = b+x mod n)    <br>
-l * a = (e - b) mod 256                                          Next I swapped e-b and a * l (because if a = b mod n, then b = a mod n)    <br>
-l * a = (e - b) mod 256                                          Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
-l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256      Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
+First I subtracted b from both sides (because if a = b mod n, then a+x = b+x mod n) <br>
+Next I swapped e-b and a * l (because if a = b mod n, then b = a mod n)    <br>
+Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
+Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
+
+e - b = (a * l) mod 256 <br>
+l * a = (e - b) mod 256   <br>                                        
+l * a = (e - b) mod 256   <br>                                        
+l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256      <br> 
 l = ((e - b) * a<sup>-1</sup>) mod 256      <br>
 
   
