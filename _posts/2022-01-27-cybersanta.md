@@ -101,8 +101,8 @@ for a in possible_a:
             with open("encrypted.bin", "rb") as f:
                 letter = ""
                 for i in range(4):
-                    byte = byte = int.from_bytes(f.read(1), 'big')
-                    l = (pow(a, -1, 256) * (byte - b)) % 256
+                    e = int.from_bytes(f.read(1), 'big')
+                    l = ((e - b) * pow(a, -1, 256)) % 256
                     letter += chr(l)
 
                 if "%PDF" in letter:
@@ -120,16 +120,16 @@ Now we know a and b we can decode the entire pdf.
 a =  169
 b =  160
 
-decoded = b''
+letter = b''
 with open("encrypted.bin", "rb") as f:
-    while (byte := f.read(1)):
-        byte = int.from_bytes(byte, 'big')
-        d = (pow(a, -1, 256) * (byte-b) ) % 256
-        decoded += bytes([d])
+    while (e := f.read(1)):
+        e = int.from_bytes(e, 'big')
+        l = ((e-b) * pow(a, -1, 256)) % 256
+        letter += bytes([l])
 f.close()
 
 with open('letter.pdf', 'wb') as g:
-    g.write(decoded)
+    g.write(letter)
 g.close()
 ```
 This creates the pdf, and when you open it you see the flag.
