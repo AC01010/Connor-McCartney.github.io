@@ -60,3 +60,9 @@ SOLUTION
 
 To login as admin I used the SQL injection admin'-- - as the username. <br>
 This gave the flag HTB{1nj3cti0n_1s_in3v1t4bl3}
+
+### XMAS Spirit
+
+Now that elves have taken over Santa has lost so many letters from kids all over the world. However, there is one kid who managed to locate Santa and sent him a letter. It seems like the XMAS spirit is so strong within this kid. He was so smart that thought of encrypting the letter in case elves captured it. Unfortunately, Santa has no idea about cryptography. Can you help him read the letter?
+<br>
+I uploaded the files for this challenge at https://github.com/Connor-McCartney/CTF-XMAS-Spirit-files
