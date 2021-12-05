@@ -86,4 +86,36 @@ l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256 <br>
 l = ((e - b) * a<sup>-1</sup>) mod 256      <br>
 
 Now we can solve for l, except we don't know a or b so we'll have to bruteforce. My first idea was to decrypt the entire message, but I soon realised that would take too much computing and wasn't feasible. Then I decided to analyse another pdf I had on my computer. <br>
-I ran "xxd random-file.pdf | head" and noticed the first 4 characters of a pdf file are "%PDF". Then I wrote a scipt to bruteforce a and b. <br>
+I ran "xxd random-file.pdf | head" and noticed the first 4 characters of a pdf file are "%PDF". Using this I wrote a scipt to bruteforce a and b. <br>
+```python
+from math import gcd
+
+possible_b = [i for i in range(1, 256)]
+possible_a = []
+for i in range(256):
+    if(gcd(256, i) == 1):
+        possible_a.append(i)
+
+for a in possible_a:
+    for b in possible_b:
+            with open("encrypted.bin", "rb") as f:
+                letter = ""
+                for i in range(4):
+                    byte = f.read(1)
+                    byte = int.from_bytes(byte, 'big')
+                    l = (pow(a, -1, 256) * (byte - b)) % 256
+                    letter += chr(l)
+
+                if "%PDF" in letter:
+                    print(f"a = {a} ")
+                    print(f"b = {b}")
+```
+
+This gives <br>
+a = 169 <br>
+b = 160 <br>
+
+Now we know a and b we can decode the entire pdf. 
+
+
+
