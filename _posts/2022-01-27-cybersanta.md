@@ -79,8 +79,8 @@ Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
 Now it makes sense why the encryption first checked that gcd(a, mod) == 1 when generating a random number for a, because this ensures a mas a modular inverse. 
 
 e - b = (a * l) mod 256 <br>
-l * a = (e - b) mod 256   <br>                                                                              
-l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256      <br> 
+l * a = (e - b) mod 256 <br>                 
+l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256 <br> 
 l = ((e - b) * a<sup>-1</sup>) mod 256      <br>
 
   
