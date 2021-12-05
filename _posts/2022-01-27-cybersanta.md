@@ -117,5 +117,22 @@ b = 160 <br>
 
 Now we know a and b we can decode the entire pdf. 
 
+```python
+a =  169
+b =  160
+
+decoded = b''
+with open("encrypted.bin", "rb") as f:
+    while (byte := f.read(1)):
+        byte = int.from_bytes(byte, 'big')
+        d = (pow(a, -1, 256) * (byte-b) ) % 256
+        decoded += bytes([d])
+f.close()
+
+with open('letter.pdf', 'wb') as g:
+    g.write(decoded)
+g.close()
+
+```
 
 
