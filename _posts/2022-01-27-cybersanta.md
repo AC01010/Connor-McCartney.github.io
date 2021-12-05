@@ -76,13 +76,11 @@ Now it's time to do some math (modular arithmetic). We have e = (a * l + b) mod 
 First I subtracted b from both sides (because if a = b mod n, then a+x = b+x mod n) <br>
 Next I swapped e-b and a * l (because if a = b mod n, then b = a mod n)    <br>
 Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
+Now it makes sense why the encryption first checked that gcd(a, mod) == 1 when generating a random number for a, because this ensures a mas a modular inverse. 
 
 e - b = (a * l) mod 256 <br>
-l * a = (e - b) mod 256   <br>                                        
-l * a = (e - b) mod 256   <br>                                        
+l * a = (e - b) mod 256   <br>                                                                              
 l * a * a<sup>-1</sup> = ((e - b) * a<sup>-1</sup>) mod 256      <br> 
 l = ((e - b) * a<sup>-1</sup>) mod 256      <br>
 
   
-Now it makes sense why the encryption first checked that gcd(a, mod) == 1 when generating a random number for a, because this ensures a mas a modular inverse. 
-
