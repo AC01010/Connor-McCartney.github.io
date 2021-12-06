@@ -157,6 +157,7 @@ ZwIBAw==<br>
 
 SOLUTION
   
+  
 We can extract n and e from the public key. n is too large to be factorised, but e=3. <br>
 This might be vulnerable to a small exponent attack. <br>
 This occurs when m<sup>e</sup> is less than n (m = message,e = exponent, n = modulus). <br>
