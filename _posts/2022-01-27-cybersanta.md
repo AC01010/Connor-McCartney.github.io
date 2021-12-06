@@ -134,3 +134,58 @@ g.close()
 ```
 This creates the pdf, and when you open it you see the flag.
 
+### Missing Reindeer
+We are given: <br>
+ciphertext = ""Ci95oTkIL85VWrJLVhns1O2vyBeCd0weKp9o3dSY7hQl7CyiIB/ <br>
+D3HaXQ619k0+4FxkVEksPL6j3wLp8HMJAPxeA321RZexR9qwswQv2S6xQ3QFJi6sgv <br>
+xkN0YnXtLKRYHQ3te1Nzo53gDnbvuR6zWV8fdlOcBoHtKXlVlsqODku2GvkTQ/06x8 <br>
+zOAWgQCKj78V2mkPiSSXf2/qfDp+FEalbOJlILsZMe3NdgjvohpJHN3O5hLfBPdod2 <br>
+v6iSeNxl7eVcpNtwjkhjzUx35SScJDzKuvAv+6DupMrVSLUfcWyvYUyd/l4v01w+8wvPH9l"
+
+and the public key: <br>
+<p>
+-----BEGIN PUBLIC KEY----- 
+MIIBIDANBgkqhkiG9w0BAQEFAAOCAQ0AMIIBCAKCAQEA5iOXKISx9NcivdXuW+uE
+y4R2DC7Q/6/ZPNYDD7INeTCQO9FzHcdMlUojB1MD39cbiFzWbphb91ntF6mF9+fY
+N8hXvTGhR9dNomFJKFj6X8+4kjCHjvT//P+S/CkpiTJkVK+1G7erJT/v1bNXv4Om
+OfFTIEr8Vijz4CAixpSdwjyxnS/WObbVmHrDMqAd0jtDemd3u5Z/gOUi6UHl+XIW
+Cu1Vbbc5ORmAZCKuGn3JsZmW/beykUFHLWgD3/QqcT21esB4/KSNGmhhQj3joS7Z
+z6+4MeXWm5LXGWPQIyKMJhLqM0plLEYSH1BdG1pVEiTGn8gjnP4Qk95oCV9xUxWW
+ZwIBAw==
+-----END PUBLIC KEY-----
+<p>
+
+SOLUTION
+  
+We can extract n and e from the public key. n is too large to be factorised, but e=3. <br>
+This might be vulnerable to a small exponent attack. <br>
+This occurs when m<sup>e</sup> is less than n (m = message,e = exponent, n = modulus). <br>
+After a quick check, it is vulnerable. To decrypt using this attack, m = the e<sup>th</sup> root of the ciphertext.
+```python
+import base64
+from Crypto.Util.number import bytes_to_long, long_to_bytes #pip install pycryptodome
+
+c = bytes_to_long(base64.b64decode(b"""Ci95oTkIL85VWrJLVhns1O2vyBeCd0weKp9o3dSY7hQl7CyiIB/D3HaXQ619k0+
+4FxkVEksPL6j3wLp8HMJAPxeA321RZexR9qwswQv2S6xQ3QFJi6sgvxkN0YnXtLKRYHQ3te1Nzo53gDnbvuR6zWV8fdlOcBoHtKXlV
+lsqODku2GvkTQ/06x8zOAWgQCKj78V2mkPiSSXf2/qfDp+FEalbOJlILsZMe3NdgjvohpJHN3O5hLfBPdod2v6iSeNxl7eVcpNtwj
+khjzUx35SScJDzKuvAv+6DupMrVSLUfcWyvYUyd/l4v01w+8wvPH9l"""))
+
+def nth_root(x,n):
+    high = 1
+    while high  n <= x:
+        high *= 2
+    low = high // 2
+    while low < high:
+        mid = int((low + high) // 2) + 1
+        if low < mid and midn < x:
+            low = mid
+        elif high > mid and mid**n > x:
+            high = mid
+        else:
+            return mid
+    return mid + 1
+
+print(long_to_bytes(nth_root(c, 3)).decode())
+```
+  
+This gives 'We are in Antarctica, near the independence mountains.HTB{w34k_3xp0n3n7_ffc896}'
