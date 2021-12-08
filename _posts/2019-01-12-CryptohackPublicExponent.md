@@ -20,3 +20,31 @@ c = 4498123071821218360427478592579314544265546502526455404602825131116449412748
 print(long_to_bytes(c).decode())
 ```
 This gives crypto{saltstack_fell_for_this!}
+
+### Modulus Inutilis
+
+We can use small exponent attack again. 
+```python
+from Crypto.Util.number import long_to_bytes #pip install pycryptodome
+
+c = 243251053617903760309941844835411292373350655973075480264001352919865180151222189820473358411037759381328642957324889519192337152355302808400638052620580409813222660643570085177957
+
+def nth_root(x,n):
+    high = 1
+    while high ** n <= x:
+        high *= 2
+    low = high // 2
+    while low < high:
+        mid = int((low + high) // 2) + 1
+        if low < mid and mid ** n < x:
+            low = mid
+        elif high > mid and mid ** n > x:
+            high = mid
+        else:
+            return mid
+    return mid + 1
+
+print(long_to_bytes(nth_root(c, 3)).decode())
+```
+This gives crypto{N33d_m04R_p4dd1ng}
+
