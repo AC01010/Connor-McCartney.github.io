@@ -174,7 +174,7 @@ khjzUx35SScJDzKuvAv+6DupMrVSLUfcWyvYUyd/l4v01w+8wvPH9l"""))
 
 def nth_root(x,n):
     high = 1
-    while high  n <= x:
+    while high ** n <= x:
         high *= 2
     low = high // 2
     while low < high:
