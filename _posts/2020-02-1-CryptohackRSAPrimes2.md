@@ -176,5 +176,51 @@ print(flag)
 ```
 This gave crypto{p00R_3570n14}.
 
+### Ron was Wrong, Whit is Right
 
+There are 50 messages and public keys given. It's possible that these 50 keys have moduluses that share the same prime factors. <br>
+I wrote a script and found that two did. This allowed me to decrypt those two messages. One had nothing meaningful, but the other <br>
+contained the flag. 
+
+```python
+from math import gcd
+from Crypto.Util.number import isPrime, long_to_bytes
+from Crypto.PublicKey import RSA    
+from Crypto.Cipher import PKCS1_OAEP
+
+#read keys
+modulus_list = [0] 
+exponent_list = [0]
+for i in range(1, 51):
+        pubkey = RSA.importKey(open(f"{i}.pem", "r").read())
+        modulus_list.append(pubkey.n)
+        exponent_list.append(pubkey.e)
+
+#attack
+"""
+for x in range(1, 51):
+        for y in range(1, 51):
+            p = gcd(modulus_list[x], modulus_list[y])
+            if (isPrime(p)):
+                print(f"\nkey {x} and {y} have a common prime factor:")
+                print(p)
+#this gives key 34 and 21 have a common prime factor
+"""
+
+#decrypt message 21
+n = modulus_list[21]
+e = exponent_list[21]
+c = int(open("21.ciphertext", "r").read(), 16)
+p = gcd(modulus_list[21], modulus_list[34])
+q = n//p
+phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)
+
+key = RSA.construct((n, e, d))
+cipher = PKCS1_OAEP.new(key)
+message = cipher.decrypt(long_to_bytes(c)).decode()
+print(message)
+```
+This gives crypto{3ucl1d_w0uld_b3_pr0ud} If you haven't <br>
+already, check out https://eprint.iacr.org/2012/064.pdf
 
