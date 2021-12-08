@@ -1,5 +1,5 @@
 ---
-title: Public Exponent
+title: RSA Public Exponent
 categories:
 - CryptoHack
 excerpt: |
