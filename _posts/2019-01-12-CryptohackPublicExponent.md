@@ -1,5 +1,5 @@
 ---
-title: PUBLIC EXPONENT
+title: Public Exponent
 categories:
 - CryptoHack
 excerpt: |
