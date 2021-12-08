@@ -179,9 +179,9 @@ def nth_root(x,n):
     low = high // 2
     while low < high:
         mid = int((low + high) // 2) + 1
-        if low < mid and midn < x:
+        if low < mid and mid ** n < x:
             low = mid
-        elif high > mid and mid**n > x:
+        elif high > mid and mid ** n > x:
             high = mid
         else:
             return mid
