@@ -147,3 +147,33 @@ m = pow(c, d, n)
 print(long_to_bytes(m).decode())
 ```
 This gave crypto{Th3se_Pr1m3s_4r3_t00_r4r3}
+
+### Fast Primes
+
+I must admit I was initially stuck with this one. <br>
+I ended up using the challenge text as a hint, "I need to produce millions of RSA keys quickly and the standard way just doesn't cut it. Here's yet another fast way to generate primes which has actually resisted years of review." <br>
+After some research, I found the ROCA vulnerability! [https://crocs.fi.muni.cz/public/papers/rsa_ccs17](https://crocs.fi.muni.cz/public/papers/rsa_ccs17)
+To factorise n I installed sagemath and used this implementation [https://github.com/FlorianPicca/ROCA/](https://github.com/FlorianPicca/ROCA/).
+Then decrypted normally for RSA:
+```python
+from Crypto.Util.number import long_to_bytes
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+
+e = 65537
+c = int("249d72cd1d287b1a15a3881f2bff5788bc4bf62c789f2df44d88aae805b54c9a94b8944c0ba798f70062b66160fee312b98879f1dd5d17b33095feb3c5830d28", 16)
+p=77342270837753916396402614215980760127245056504361515489809293852222206596161
+q=51894141255108267693828471848483688186015845988173648228318286999011443419469
+n = p*q
+phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)
+
+key = RSA.construct((n, e, d))
+cipher = PKCS1_OAEP.new(key)
+flag = cipher.decrypt(long_to_bytes(c)).decode()
+print(flag)
+```
+This gave crypto{p00R_3570n14}.
+
+
+
