@@ -224,3 +224,39 @@ print(message)
 This gives crypto{3ucl1d_w0uld_b3_pr0ud} If you haven't <br>
 already, check out https://eprint.iacr.org/2012/064.pdf
 
+### RSA Backdoor Viability
+
+Given: output.txt and 
+```python
+import random
+from Crypto.Util.number import bytes_to_long, getPrime, isPrime
+
+FLAG = b"crypto{????????????????????????????????}"
+
+def get_complex_prime():
+    D = 427
+    while True:
+        s = random.randint(2 ** 1020, 2 ** 1021 - 1)
+        tmp = D * s ** 2 + 1
+        if tmp % 4 == 0 and isPrime((tmp // 4)):
+            return tmp // 4
+
+
+m = bytes_to_long(FLAG)
+p = get_complex_prime()
+q = getPrime(2048)
+n = p * q
+e = 0x10001
+c = pow(m, e, n)
+
+print(f"n = {n}")
+print(f"e = {e}")
+print(f"c = {c}")
+```
+
+SOLUTION
+
+After some research, I found [https://crocs.fi.muni.cz/public/papers/Secrypt2019](https://crocs.fi.muni.cz/public/papers/Secrypt2019). 
+This is pretty interesting. It states n=pq can be factorised if "p,q are primes and the square-free part of 4p-1 is small". <br>
+
+
