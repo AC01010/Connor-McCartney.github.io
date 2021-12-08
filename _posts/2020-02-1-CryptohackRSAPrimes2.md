@@ -153,6 +153,7 @@ This gave crypto{Th3se_Pr1m3s_4r3_t00_r4r3}
 I must admit I was initially stuck with this one. <br>
 I ended up using the challenge text as a hint, "I need to produce millions of RSA keys quickly and the standard way just doesn't cut it. Here's yet another fast way to generate primes which has actually resisted years of review." <br>
 After some research, I found the ROCA vulnerability! [https://crocs.fi.muni.cz/public/papers/rsa_ccs17](https://crocs.fi.muni.cz/public/papers/rsa_ccs17)
+
 To factorise n I installed sagemath and used this implementation [https://github.com/FlorianPicca/ROCA/](https://github.com/FlorianPicca/ROCA/).
 Then decrypted normally for RSA:
 ```python
