@@ -69,8 +69,12 @@ This gives crypto{s0m3th1ng5_c4n_b3_t00_b1g}.
 This challenge involved a lottt of modular arithmetic. <br>
 We are given the ciphertext c, exponent e = 65537, n and d from our private key, and exponents e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>, e<sub>5</sub> from the friend's public keys. The modulus n is the same for all private and public keys. <br>
 The message m is encrypted with all of the friend's public keys: <br>
-c = ((((m<sup>e1</sup> mod n)<sup>e2</sup> mod n)<sup>e3</sup> mod n)<sup>e4</sup> mod n)<sup>e5</sup> mod n <br>
+c = ((((m<sup>e1</sup> mod n)<sup>e2</sup> mod n)<sup>e3</sup> mod n)<sup>e4</sup> mod n)<sup>e5</sup> mod n 
+
+Each exponent from the friend's public key must be decrypted with a corresponding d. <br>
+m = ((((c<sup>d5</sup> mod n)<sup>d4</sup> mod n)<sup>d3</sup> mod n)<sup>d2</sup> mod n)<sup>d1</sup> mod n 
+
 Since (x<sup>a</sup> mod n)<sup>b</sup> mod n = x<sup>a x b</sup> mod n, this simplifies to:  <br>
-m<sup>e1 x e2 x e3 x e4 x e5</sup> mod n 
+m = c<sup>d1 x d2 x d3 x d4 x d5</sup> mod n
 
 
