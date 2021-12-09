@@ -79,21 +79,37 @@ m = c<sup>d1 x d2 x d3 x d4 x d5</sup> mod n
 
 Next we must solve for d1 x d2 x d3 x d4 x d5. Note I'll refer to phi(n) as just phi. <br>
 
-d1 = e1<sup>-1</sup> mod phi <br>
-d2 = e2<sup>-1</sup> mod phi <br>
-etc
+e1 * d1 = 1 mod phi <br>
 
-d1 x d2 x d3 x d4 x d5 = (e1<sup>-1</sup> mod phi)(e2<sup>-1</sup> mod phi)(e3<sup>-1</sup> mod phi)(e4<sup>-1</sup> mod phi)(e5<sup>-1</sup> mod phi)<br>d1 x d2 x d3 x d4 x d5 = (e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod phi
+So long as gcd(k, phi) = 1, we can use the fact that: <br>
+e1(e1<sup>-1</sup> mod (k * phi)) = 1 mod phi
+
+Thus, <br>
+d1 = e1<sup>-1</sup> mod (k * phi)
+                           
+We know in RSA that ed = 1 mod phi. From this we can get k x phi = ed - 1. Now we substitute this:<br>
+d1 = e1<sup>-1</sup> mod (ed - 1)
+
+We can repeat this for d2, d3, d4 and d5.
+
+d1 x d2 x d3 x d4 x d5 = (e1<sup>-1</sup> mod (ed - 1))(e2<sup>-1</sup> mod (ed - 1))(e3<sup>-1</sup> mod (ed - 1))(e4<sup>-1</sup> mod (ed - 1))(e5<sup>-1</sup> mod (ed - 1))<br>d1 x d2 x d3 x d4 x d5 = (e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod (ed - 1)
        
 If we sub this in we get:
-m = c<sup>e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod phi</sup> mod n
+m = c<sup>(e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod (ed - 1)</sup> mod n
        
-       
-       
-                         
-We know in RSA that ed = 1 mod phi. From this we can get k x phi = ed - 1. Now we substitute this:
-d1 x e1 = 1 mod (k * phi) <br>
-d1 x e1 = 1 mod (ed - 1) <br>
-d1 = e1<sup>-1</sup> mod (ed - 1)
+We can calculate this in python:
+```python
+from Crypto.Util.number import long_to_bytes, inverse
+
+c = 203046102795781867381727662242247931198850712624644644488634611840922257360547479769851796739054415026891262162828977045087454037990547341215839688539997916042816151541007362591314534243853643246302296711853437781728072626407093018>
+e = 65537
+n =  21711308225346315542706844618441565741046498277716979943478360598053144971379956916575370343448988601905854572029635846626259487297950305231661109855854947494209135205589258643517961521594924368498672064293208230802441077390193682>
+d = 273441167725114803072313800571610973383886654537552760201825515931963102665319078367049310793640160398142917188050436056049477101724646870290264737095422031245254134285874759057627377510787045085353371711668432697626300643573338204>
+
+m = pow(c, pow(106979 * 108533 * 69557 * 97117 * 103231, -1, e*d-1) , n)
+print(long_to_bytes(m).decode())
+```
+
+This gives crypto{3ncrypt_y0ur_s3cr3t_w1th_y0ur_fr1end5_publ1c_k3y}.
 
 
