@@ -85,7 +85,8 @@ etc
 
 d1 x d2 x d3 x d4 x d5 = (e1<sup>-1</sup> mod phi)(e2<sup>-1</sup> mod phi)(e3<sup>-1</sup> mod phi)(e4<sup>-1</sup> mod phi)(e5<sup>-1</sup> mod phi)<br>d1 x d2 x d3 x d4 x d5 = (e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod phi
        
-       
+If we sub this in we get:
+m = c<sup>e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod phi</sup> mod n
        
        
        
