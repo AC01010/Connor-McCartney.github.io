@@ -79,18 +79,15 @@ m = c<sup>d1 x d2 x d3 x d4 x d5</sup> mod n
 
 Next we must solve for d1 x d2 x d3 x d4 x d5. Note I'll refer to phi(n) as just phi.
 
-UGLY
-Let d1 = (e1<sup>-1</sup> mod ed - 1)
-so d1 = (e1<sup>-1</sup> mod k * phi)
-so d1 e1 = (1 mod k * phi)
-so d1 e1 = (1 mod phi)
-
-
-
 We know in RSA that ed = 1 mod phi. From this we can get k x phi = ed - 1. Now we substitute this:
 
-d1 = (e1<sup>-1</sup> mod phi)
 
+d1 x e1 = 1 mod phi <br>
+d1 x e1 = 1 mod k * phi <br>
+d1 x e1 = 1 mod ed - 1 <br>
+d1 = e1<sup>-1</sup> mod ed - 1
+
+Do the same for d2, d3, d4, d5. Then, 
 
 d1 x d2 x d3 x d4 x d5 = (e1<sup>-1</sup> mod ed - 1)
 
