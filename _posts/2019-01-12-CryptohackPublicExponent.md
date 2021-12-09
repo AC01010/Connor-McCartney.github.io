@@ -66,7 +66,7 @@ This gives crypto{s0m3th1ng5_c4n_b3_t00_b1g}.
 
 ### Crossed Wires
 
-This challenge involved a lottt of modular arithmetic. <br>
+This challenge involved a lot of modular arithmetic. <br>
 We are given the ciphertext c, exponent e = 65537, n and d from our private key, and exponents e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>, e<sub>5</sub> from the friend's public keys. The modulus n is the same for all private and public keys. <br>
 The message m is encrypted with all of the friend's public keys: <br>
 c = ((((m<sup>e1</sup> mod n)<sup>e2</sup> mod n)<sup>e3</sup> mod n)<sup>e4</sup> mod n)<sup>e5</sup> mod n 
@@ -74,7 +74,24 @@ c = ((((m<sup>e1</sup> mod n)<sup>e2</sup> mod n)<sup>e3</sup> mod n)<sup>e4</su
 Each exponent from the friend's public key must be decrypted with a corresponding d. <br>
 m = ((((c<sup>d5</sup> mod n)<sup>d4</sup> mod n)<sup>d3</sup> mod n)<sup>d2</sup> mod n)<sup>d1</sup> mod n 
 
-Since (x<sup>a</sup> mod n)<sup>b</sup> mod n = x<sup>a x b</sup> mod n, this simplifies to:  <br>
+Since (x<sup>a</sup> mod n)<sup>b</sup> mod n = x<sup>ab</sup> mod n, this simplifies to:  <br>
 m = c<sup>d1 x d2 x d3 x d4 x d5</sup> mod n
+
+Next we must solve for d1 x d2 x d3 x d4 x d5. Note I'll refer to phi(n) as just phi.
+
+UGLY
+Let d1 = (e1<sup>-1</sup> mod ed - 1)
+so d1 = (e1<sup>-1</sup> mod k * phi)
+so d1 e1 = (1 mod k * phi)
+so d1 e1 = (1 mod phi)
+
+
+
+We know in RSA that ed = 1 mod phi. From this we can get k x phi = ed - 1. Now we substitute this:
+
+d1 = (e1<sup>-1</sup> mod phi)
+
+
+d1 x d2 x d3 x d4 x d5 = (e1<sup>-1</sup> mod ed - 1)
 
 
