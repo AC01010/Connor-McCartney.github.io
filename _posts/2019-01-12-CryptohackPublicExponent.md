@@ -98,7 +98,7 @@ m = c<sup>(e1 x e2 x e3 x e4 x e5)<sup>-1</sup> mod (ed - 1)</sup> mod n
        
 We can calculate this in python:
 ```python
-from Crypto.Util.number import long_to_bytes, inverse
+from Crypto.Util.number import long_to_bytes
 
 e = 65537
 c = int("""20304610279578186738172766224224793119885071262464464448863461184092225736054747976985179673905441502689126216282897704508745403799054734121583968853999791604281615154100
