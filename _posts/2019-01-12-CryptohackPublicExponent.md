@@ -78,10 +78,9 @@ Since (x<sup>a</sup> mod n)<sup>b</sup> mod n = x<sup>ab</sup> mod n, this simpl
 m = c<sup>d1 x d2 x d3 x d4 x d5</sup> mod n
 
 Next we must solve for d1 x d2 x d3 x d4 x d5. Note I'll refer to phi(n) as just phi. <br>
-
 e1 * d1 = 1 mod phi <br>
 
-So long as gcd(k, phi) = 1, we can use the fact that: <br>
+So long as k < e1, we can use the fact that: <br>
 e1(e1<sup>-1</sup> mod (k * phi)) = 1 mod phi
 
 Thus, <br>
