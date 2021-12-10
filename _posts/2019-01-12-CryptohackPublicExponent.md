@@ -135,3 +135,7 @@ m = pow(c, d, n)
 print(long_to_bytes(m).decode())
 ```
 This gives crypto{bon3h5_4tt4ck_i5_sr0ng3r_th4n_w13n3r5}.
+
+### Endless Emails
+
+We can use [Hadstad's Broadcast Attack](https://en.wikipedia.org/wiki/Coppersmith's_attack#H%C3%A5stad's_broadcast_attack) to solve this challenge. 
