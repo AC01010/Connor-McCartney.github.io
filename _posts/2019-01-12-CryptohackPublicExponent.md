@@ -123,7 +123,7 @@ This gives crypto{3ncrypt_y0ur_s3cr3t_w1th_y0ur_fr1end5_publ1c_k3y}.
 ### Everything is Still Big
 
 Boneh Durfee attack can be used when the private exponent d is too small compared to the modulus.<br>
-I used this implementation https://github.com/mimoo/RSA-and-LLL-attacks/blob/master/boneh_durfee.sage and got d in under a second. 
+I used [this implementation](https://github.com/mimoo/RSA-and-LLL-attacks/blob/master/boneh_durfee.sage) and got d in under a second. 
 
 ```python
 n = 0x665166804cd78e8197073f65f58bca14e019982245fcc7cad74535e948a4e0258b2e919bf3720968a00e5240c5e1d6b8831d8fec300d969fccec6cce11dde826d3fbe0837194f2dc64194c78379440671563c6c75267f0286d779e6d91d3e9037c642a860a894d8c45b7ed564d341501cedf260d3019234f2964ccc6c56b6de8a4f66667e9672a03f6c29d95100cdf5cb363d66f2131823a953621680300ab3a2eb51c12999b6d4249dde499055584925399f3a8c7a4a5a21f095878e80bbc772f785d2cbf70a87c6b854eb566e1e1beb7d4ac6eb46023b3dc7fdf34529a40f5fc5797f9c15c54ed4cb018c072168e9c30ca3602e00ea4047d2e5686c6eb37b9
