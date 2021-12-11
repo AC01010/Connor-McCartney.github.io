@@ -62,9 +62,9 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 ```
-To search with paru: paru -Ss <what you want to search> <br>
-To install with paru: paru -S <what you want to install> <br>
-To remove with paru: paru -Rsn <what you want to remove>
+To search with paru: paru -Ss  <br>
+To install with paru: paru -S  <br>
+To remove with paru: paru -Rsn 
 
 #### 8. Remove firefox
 <br>
