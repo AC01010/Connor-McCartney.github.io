@@ -87,7 +87,7 @@ Add the following to ~/.config/kdeglobals <br>
 run_command=false
 
 
-#### 10. Disable screen locking/power saving
+#### 11. Disable screen locking/power saving
 
 Advanced power settings > Stop charging only once below > 80% <br>
 Energy saving > On AC Power > turn everything off except dim screen and energy saving <br>
