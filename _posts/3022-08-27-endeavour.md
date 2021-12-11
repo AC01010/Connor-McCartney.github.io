@@ -34,8 +34,7 @@ Switch to previous desktop: change to control+shift+left <br>
 
 #### 4. Setup virtual desktops
 
-Open virtual desktops
-
+Open virtual desktops <br>
 I like to have 4. Turn navigation wraps around off. 
 
 
@@ -47,5 +46,12 @@ Create a new profile > Appearance > Choose a colour scheme <br>
 Set this profile as default and apply<br>
 
 Right click near top of konsole <br>
-More actions > Configure special application settings
+More actions > Configure special application settings <br>
+Change exact match to substring match <br>
+Add property > no titlebar and frame > yes > force <br>
+Add property > maximised horizontally > yes > force <br>
+Add property > maximised vertically > yes > force <br>
+
+Settings > Toolbars shown > disable all
+Settings > Show Menubar > disable
 
