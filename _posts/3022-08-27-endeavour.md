@@ -77,13 +77,18 @@ rm -r ~/.cache/mozilla
 #### 9. Install whatever you want
 <br>
 ```
-paru -S brave-bin google-chrome downgrade discord vim
+paru -S brave-bin google-chrome downgrade discord vim btop
 ```
   
 #### 10. Remove krunner desktop 
-<br>
-```
-sudo echo "" >> ~/.config/kdeglobals
-sudo echo "[KDE Action Restrictions][$i]" >> ~/.config/kdeglobals
-sudo echo "run_command=false " >> ~/.config/kdeglobals
-```
+
+Add the following to ~/.config/kdeglobals <br>
+[KDE Action Restrictions][$i] <br>
+run_command=false
+
+
+#### 10. Disable screen locking/power saving
+
+Advanced power settings > Stop charging only once below > 80% <br>
+Energy saving > On AC Power > turn everything off except dim screen and energy saving <br>
+Screen locking > disable
