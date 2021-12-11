@@ -73,4 +73,17 @@ paru -Rsn firefox
 rm -r ~/.mozilla 
 rm -r ~/.cache/mozilla 
 ```
+
+#### 9. Install whatever you want
+<br>
+```
+paru -S brave-bin google-chrome downgrade discord vim
+```
   
+#### 10. Remove krunner desktop 
+<br>
+```
+sudo echo "" >> ~/.config/kdeglobals
+sudo echo "[KDE Action Restrictions][$i]" >> ~/.config/kdeglobals
+sudo echo "run_command=false " >> ~/.config/kdeglobals
+```
