@@ -1,5 +1,5 @@
 ---
-title: How I Cutomise EndeavourOS Plasma
+title: How I Customise EndeavourOS Plasma
 categories:
 - Other
 excerpt: |
@@ -32,13 +32,13 @@ Show desktop grid: change to meta+tab <br>
 Switch to next desktop: change to control+shift+right <br>
 Switch to previous desktop: change to control+shift+left <br>
 
-#### 4. Setup virtual desktops
+#### 5. Setup virtual desktops
 
 Open virtual desktops <br>
 I like to have 4. Turn navigation wraps around off. 
 
 
-#### 5. Configure konsol
+#### 6. Configure konsole
 
 Open konsole<br>
 Settings > Manage Profiles <br>
@@ -55,3 +55,12 @@ Add property > maximised vertically > yes > force <br>
 Settings > Toolbars shown > disable all
 Settings > Show Menubar > disable
 
+#### 7. Install paru
+```
+git clone https://aur.archlinux.org/packages/paru
+cd paru
+makepkg -si
+```
+To search with paru: paru -Ss <what you want to search> <br>
+To install with paru: paru -S <what you want to install>
+  
