@@ -62,5 +62,13 @@ cd paru
 makepkg -si
 ```
 To search with paru: paru -Ss <what you want to search> <br>
-To install with paru: paru -S <what you want to install>
+To install with paru: paru -S <what you want to install> <br>
+To remove with paru: paru -Rsn <what you want to remove>
+
+#### 8. Remove firefox
+```
+yay -Rsn firefox 
+rm -r ~/.mozilla 
+rm -r ~/.cache/mozilla 
+```
   
