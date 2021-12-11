@@ -56,6 +56,7 @@ Settings > Toolbars shown > disable all
 Settings > Show Menubar > disable
 
 #### 7. Install paru
+
 ```
 git clone https://aur.archlinux.org/packages/paru
 cd paru
@@ -66,6 +67,7 @@ To install with paru: paru -S <what you want to install> <br>
 To remove with paru: paru -Rsn <what you want to remove>
 
 #### 8. Remove firefox
+  
 ```
 paru -Rsn firefox 
 rm -r ~/.mozilla 
