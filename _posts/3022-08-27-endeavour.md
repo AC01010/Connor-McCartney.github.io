@@ -67,7 +67,7 @@ To remove with paru: paru -Rsn <what you want to remove>
 
 #### 8. Remove firefox
 ```
-yay -Rsn firefox 
+paru -Rsn firefox 
 rm -r ~/.mozilla 
 rm -r ~/.cache/mozilla 
 ```
