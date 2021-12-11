@@ -58,7 +58,7 @@ Settings > Show Menubar > disable
 #### 7. Install paru
 
 ```
-git clone https://aur.archlinux.org/packages/paru
+git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 ```
