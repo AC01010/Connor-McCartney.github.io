@@ -68,5 +68,5 @@ encrypted_flag (c) and padding, but the same value for modulus (n). If you disco
 In the script, we see e = 11. We are given a and b for padding (which changes). It is encrypted as <br>
 c = (a * m + b)<sup>11</sup> mod n <br>
 Thus, <br>
-(a * m + b)<sup>11 = k*n + c
+(a * m + b)<sup>11</sup> = k * n + c
 
