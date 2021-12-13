@@ -62,5 +62,5 @@ SOLUTION
 
 At the bottom of their script it says the challenge function is called on your JSON input. 
 So to get an output it seems you have to run "nc socket.cryptohack.org 13386" <br>
-and then send {'option':'get_flag'}
+and then send {"option":"get_flag"}.
 
