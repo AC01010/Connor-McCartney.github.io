@@ -65,5 +65,5 @@ So to get an output it seems you have to run "nc socket.cryptohack.org 13386" <b
 and then send {"option":"get_flag"}. You can run this many times on the same connection and get different values for <br>
 encrypted_flag (c) and padding, but the same value for modulus (n). If you disconnect and reconnect you'll get a different modulus. 
 
-
+In the script, we see e = 11. 
 
