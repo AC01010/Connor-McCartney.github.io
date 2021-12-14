@@ -70,3 +70,5 @@ c = (a * m + b)<sup>11</sup> mod n <br>
 Thus, <br>
 (a * m + b)<sup>11</sup> = k * n + c
 
+To my surprise, I found that the Coppersmith theorem is applicable to affine padding (https://www.utc.edu/sites/default/files/2021-04/course-paper-5600-rsa.pdf).
+
