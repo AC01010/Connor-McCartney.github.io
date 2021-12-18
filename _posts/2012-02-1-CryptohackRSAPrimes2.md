@@ -341,7 +341,7 @@ def CMfactor_core(N, a, Q, ZN, Hx, res):
             if r > 1 and r != N:
                 p = r
                 q = N//r
-                print(f'\nn has been factorised!!! \np: \n{p} \n\nq: {q}\n')
+                print(f'\nn has been factorised!!! \np: \n{p} \n\nq: \n{q}\n')
                 return p, q
 
 def main():
