@@ -104,7 +104,6 @@ print(l2b(FLAG))
 ### Favourite byte
 
 ```python
-from binascii import unhexlify
 l2b = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big')
 
 decoded = l2b(0x73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d)
