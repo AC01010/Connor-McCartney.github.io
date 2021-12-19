@@ -66,9 +66,17 @@ and then send {  "option" : "get_flag" }. You can run this many times on the sam
 encrypted_flag (c) and padding, but the same value for modulus (n). If you disconnect and reconnect you'll get a different modulus. 
 
 In the script, we see e = 11. We are given a and b for padding (which changes). Messages are encrypted as <br>
-c1 = (a1 * f + b1)<sup>11</sup> mod n <br>
-c2 = (a2 * f + b2)<sup>11</sup> mod n <br>
+c1 = (a1 * x + b1)<sup>11</sup> mod n <br>
+c2 = (a2 * x + b2)<sup>11</sup> mod n <br>
 etc
 
 To my surprise, I found that the Coppersmith theorem is applicable to affine padding (https://www.utc.edu/sites/default/files/2021-04/course-paper-5600-rsa.pdf).
+
+Now, let 
+
+g1(x, y) = 
+g2(x, y) = 
+
+
+*unfinished*
 
