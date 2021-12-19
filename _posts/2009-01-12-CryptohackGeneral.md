@@ -169,3 +169,17 @@ print(f'u: {u}, v: {v}')
 ```
 
 ### Modular Arithmetic 1
+
+```python
+x = 11 % 6
+y = 8146798528947 % 17
+print(x)
+print(y)
+#4
+```
+
+### Modular Arithmetic 2
+
+```python
+
+```
