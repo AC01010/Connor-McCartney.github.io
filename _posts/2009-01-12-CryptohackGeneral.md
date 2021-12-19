@@ -80,5 +80,10 @@ while 1:
 #crypto{3nc0d3_d3c0d3_3nc0d3}
 ```
 
+### XOR Starter
 
-
+```python
+l2b = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big').decode()
+print("".join([l2b(ord(i)^13) for i in "label"]))
+#crypto{aloha}
+```
