@@ -181,5 +181,18 @@ print(y)
 ### Modular Arithmetic 2
 
 ```python
+print(pow(273246787654, 65536, 65537))
+#1
+```
+
+### Modular Inverting
+```python
+pow(3, -1, 13)
+#9
+```
+
+### Privacy-Enhanced Mail?
+
+```python
 
 ```
