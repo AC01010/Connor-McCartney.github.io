@@ -141,5 +141,5 @@ lemur = os.path.dirname(__file__) + "/lemur.png"
 result = os.path.dirname(__file__) + "/result.png"
 key = cv2.bitwise_xor(cv2.imread(flag), cv2.imread(lemur))
 cv2.imwrite(result, key)
-#crypto{x0Rly_n0t!}
+#crypto{X0Rly_n0t!}
 ```
