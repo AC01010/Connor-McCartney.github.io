@@ -204,6 +204,12 @@ print(key.d)
 ```
 
 ### CERTainly not
+```
+openssl x509 -inform DER -in cert.der -modulus
+```
+
+### SSH Keys
+
 ```python
 
 ```
