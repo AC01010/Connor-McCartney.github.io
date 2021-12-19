@@ -210,6 +210,12 @@ openssl x509 -inform DER -in cert.der -modulus
 
 ### SSH Keys
 
+```
+ssh-keygen -f bruce_rsa.pub -e -m pem | openssl rsa -modulus -RSAPublicKey_in
+```
+
+### Transparency
+
 ```python
 
 ```
