@@ -143,3 +143,13 @@ key = cv2.bitwise_xor(cv2.imread(flag), cv2.imread(lemur))
 cv2.imwrite(result, key)
 #crypto{X0Rly_n0t!}
 ```
+
+### Greatest Common Divisor
+
+```python
+from math import gcd
+print(gcd(66528, 52920))
+#1512
+```
+
+### Extended GCD
