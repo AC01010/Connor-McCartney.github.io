@@ -129,3 +129,17 @@ complete_key = (partial_key * (len(message)//len(partial_key)+1))[:len(message)]
 flag = xor(message, complete_key.encode())
 print(flag.decode())
 ```
+
+### Lemur XOR
+
+```python
+import os
+import cv2 # pip3 install opencv-python
+
+flag = os.path.dirname(__file__) + "/flag.png"
+lemur = os.path.dirname(__file__) + "/lemur.png"
+result = os.path.dirname(__file__) + "/result.png"
+key = cv2.bitwise_xor(cv2.imread(flag), cv2.imread(lemur))
+cv2.imwrite(result, key)
+#crypto{x0Rly_n0t!}
+```
