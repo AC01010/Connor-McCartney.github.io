@@ -194,5 +194,16 @@ pow(3, -1, 13)
 ### Privacy-Enhanced Mail?
 
 ```python
+#alternative
+#openssl rsa -in privkey.pem -text
+
+from Crypto.PublicKey import RSA
+f = open('privkey.pem','r')
+key = RSA.importKey(f.read())
+print(key.d)
+```
+
+### CERTainly not
+```python
 
 ```
