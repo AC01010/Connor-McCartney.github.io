@@ -100,3 +100,24 @@ FLAG = KEY1 ^ KEY2 ^ KEY3 ^ 0x04ee9855208a2cd59091d04767ae47963170d1660df7f56f5f
 print(l2b(FLAG))
 #crypto{x0r_i5_ass0c1at1v3}
 ```
+
+### Favourite byte
+
+```python
+from binascii import unhexlify
+l2b = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big')
+
+decoded = l2b(0x73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d)
+for i in range(256):    
+    flag = b''
+    for b in decoded:
+        flag += bytes([b ^ i])
+    try:
+        if "crypto" in flag.decode():
+            print(flag.decode())
+    except:
+        pass #could not decode
+#crypto{0x10_15_my_f4v0ur173_by7e}
+```
+
+
