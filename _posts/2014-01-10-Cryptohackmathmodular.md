@@ -102,7 +102,6 @@ def tonelli(a, p):
             if t == 1:
                 break
             t = pow(t, 2, p)
-
         if m == 0:
             return x
         gs = pow(g, 2 ** (r - m - 1), p)
