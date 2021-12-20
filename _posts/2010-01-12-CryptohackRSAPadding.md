@@ -1,5 +1,5 @@
 ---
-title: RSA Padding
+title: RSA - Padding
 categories:
 - CryptoHack
 excerpt: |
