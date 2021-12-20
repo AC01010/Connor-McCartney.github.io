@@ -29,3 +29,10 @@ for x in ints:
 ```
 
 ### Legendre Symbol
+
+We are given a is a quadratic residue if a<sup>(p-1)/2</sup> mod p = 1. <br>
+Once we have found the quadratic residue x, we need the square root. That is, <br>
+x<sup>1/2</sup> mod p <br>
+
+We know x<sup>(p-1)/2</sup> = 1 mod p <br>
+We can apply Fermat's Little Theorem: x<sup>p-1</sup> = 1 mod p  <br>
