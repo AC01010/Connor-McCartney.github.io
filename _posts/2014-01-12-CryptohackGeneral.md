@@ -1,5 +1,5 @@
 ---
-title: General
+title: GENERAL
 categories:
 - CryptoHack
 excerpt: |
