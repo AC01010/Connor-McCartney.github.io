@@ -39,8 +39,8 @@ Multiply both sides by x: <br>
 x = x * x<sup>(p-1)/2</sup> mod p <br>
 x = x<sup>(p+1)/2 mod p <br>
   
-We can sub this value for x mod p in:
-x<sup>1/2</sup> mod p = x<sup>(p+1)/4 mod p
+We can sub this value for x mod p in: <br>
+x<sup>1/2</sup> mod p = x<sup>(p+1)/4</sup> mod p
 
 Now we can try just calculating x<sup>(p+1)/4 mod p and if it gives an integer that is our answer. 
 ```python
@@ -52,3 +52,5 @@ for a in ints:
 #found quadratic residue x
 print(pow(x, (p+1)//4, p))
 ```
+
+### Modular Square Root
