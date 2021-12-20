@@ -112,12 +112,11 @@ def tonelli(a, p):
 
 print (tonelli(a, p))  
 ```
-  
+ 
 ### Chinese Remainder Theorem
   
 ```python
 from functools import reduce
-
 def chinese_remainer(n, a):
     sum = 0
     prod = reduce(lambda a, b: a*b, n)
