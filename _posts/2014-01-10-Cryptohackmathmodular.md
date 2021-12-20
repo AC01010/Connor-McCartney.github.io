@@ -38,15 +38,17 @@ We know 1 = x<sup>(p-1)/2</sup> mod p <br>
 Multiply both sides by x: <br>
 x = x * x<sup>(p-1)/2</sup> mod p <br>
 x = x<sup>(p+1)/2 mod p <br>
+  
 We can sub this value for x mod p in:
-x<sup>1/2</sup> mod p <br> = x<sup>(p+1)/4 mod p
+x<sup>1/2</sup> mod p = x<sup>(p+1)/4 mod p
 
-
-
-
-
-
-
-
-
-We can apply Fermat's Little Theorem: x<sup>p-1</sup> = 1 mod p  <br>
+Now we can try just calculating x<sup>(p+1)/4 mod p and if it gives an integer that is our answer. 
+```python
+p = 101524035174539890485408575671085261788758965189060164484385690801466167356667036677932998889725476582421738788500738738503134356158197247473850273565349249573867251280253564698939768700489401960767007716413932851838937641880157263>
+ints = [25081841204695904475894082974192007718642931811040324543182130088804239047149283334700530600468528298920930150221871666297194395061462592781551275161695411167049544771049769000895119729307495913024360169904315078028798025169985>
+for a in ints:
+        if pow(a, (p-1)//2, p) == 1:
+                x = a
+#found quadratic residue x
+print(pow(x, (p+1)//4, p))
+```
