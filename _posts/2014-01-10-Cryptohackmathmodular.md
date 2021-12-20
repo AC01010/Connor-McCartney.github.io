@@ -34,5 +34,19 @@ We are given a is a quadratic residue if a<sup>(p-1)/2</sup> mod p = 1. <br>
 Once we have found the quadratic residue x, we need the square root. That is, <br>
 x<sup>1/2</sup> mod p <br>
 
-We know x<sup>(p-1)/2</sup> = 1 mod p <br>
+We know 1 = x<sup>(p-1)/2</sup> mod p <br>
+Multiply both sides by x: <br>
+x = x * x<sup>(p-1)/2</sup> mod p <br>
+x = x<sup>(p+1)/2 mod p <br>
+We can sub this value for x mod p in:
+x<sup>1/2</sup> mod p <br> = x<sup>(p+1)/4 mod p
+
+
+
+
+
+
+
+
+
 We can apply Fermat's Little Theorem: x<sup>p-1</sup> = 1 mod p  <br>
