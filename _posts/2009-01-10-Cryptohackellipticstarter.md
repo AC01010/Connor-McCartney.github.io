@@ -1,5 +1,5 @@
 ---
-title: ELLIPTIC CURVES - STARTER
+title: ELLIPTIC CURVES - Starter
 categories:
 - CryptoHack
 excerpt: |
@@ -15,3 +15,4 @@ The flag is the name we give groups with a commutative operation.
 crypto{abelian}
 
 ### Point Negation
+
