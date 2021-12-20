@@ -1,5 +1,5 @@
 ---
-title: RSA Primes Part 2
+title: RSA - Primes Part 2
 categories:
 - CryptoHack
 excerpt: |
