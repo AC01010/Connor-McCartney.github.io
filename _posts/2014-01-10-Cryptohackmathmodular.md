@@ -37,7 +37,7 @@ x<sup>1/2</sup> mod p <br>
 We know 1 = x<sup>(p-1)/2</sup> mod p <br>
 Multiply both sides by x: <br>
 x = x * x<sup>(p-1)/2</sup> mod p <br>
-x = x<sup>(p+1)/2 mod p <br>
+x = x<sup>(p+1)/2</sup> mod p <br>
   
 We can sub this value for x mod p in: <br>
 x<sup>1/2</sup> mod p = x<sup>(p+1)/4</sup> mod p
