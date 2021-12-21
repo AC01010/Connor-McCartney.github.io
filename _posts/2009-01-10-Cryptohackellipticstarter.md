@@ -73,4 +73,21 @@ This gives crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}
 
 ### Efficient Exchange
 
+First we need to calculate the y coordinate by subbing the x into the curve.
 
+```python
+  print((4726**3 + 497*4726 + 1768) % 9739)
+```
+'
+So y<sup>2</sup> = 5507
+
+In the Legendre Symbol cryptohack challenge for p = 3 mod 4 we got the formula <br>
+x<sup>1/2</sup> mod p = x<sup>(p+1)/4</sup> mod p
+
+We can use this to calculate y.
+
+```python
+print(pow(5507, (9739 + 1)//4, 9739))
+```
+
+So y = 6287.
