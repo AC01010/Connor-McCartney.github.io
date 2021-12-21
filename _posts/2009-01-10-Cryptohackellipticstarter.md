@@ -39,3 +39,17 @@ print(s)
 ```
 
 This gives crypto{4215, 2162}
+
+### Scalar Multiplication
+
+```python
+E = EllipticCurve( GF(9739), [497, 1768] )
+P = E.point((2339, 2213))
+Q = P*7863
+print(Q.xy())
+#(9467, 2742)
+```
+
+This gives crypto{9467, 2742}
+
+### Curves and Logs
