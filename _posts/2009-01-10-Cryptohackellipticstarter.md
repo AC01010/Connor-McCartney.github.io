@@ -16,14 +16,15 @@ crypto{abelian}
 
 ### Point Negation
 
-Given: 
-P(8045,6936)
+Given:  <br>
+P(8045,6936) <br>
 P + Q = O
 
 SOLUTION
-To negate the point P we must find a point directly above or below P, so that when connecting the points they form a vertical line that does not hit the curve again. Elliptic curves are symetric about the x-axis, so we can simply flip the y coordinate. 
-Q = (8045,-6936) mod 9739
-Q = (8045,2803)
+
+To negate the point P we must find a point directly above or below P, so that when connecting the points they form a vertical line that does not hit the curve again. Elliptic curves are symetric about the x-axis, so we can simply flip the y coordinate. <br>
+Q = (8045,-6936) mod 9739 <br>
+Q = (8045,2803) <br>
 
 This gives crypto{8045,2803}.
 
