@@ -53,3 +53,24 @@ print(Q.xy())
 This gives crypto{9467, 2742}
 
 ### Curves and Logs
+
+We are given QA = (815, 3190), nB = 1829 and must find the SHA1 hash of the x coordinate of S.
+
+S = nA * QB = nB * QA <br>
+S = QA * 1829
+
+```python
+from hashlib import sha1
+E = EllipticCurve( GF(9739), [497, 1768] )
+QA = E.point((815, 3190))
+S = QA*1829
+x = (S.xy()[0])
+print(sha1(str(x).encode()).hexdigest())
+#80e5212754a824d3a4aed185ace4f9cac0f908bf
+```
+
+This gives crypto{80e5212754a824d3a4aed185ace4f9cac0f908bf}
+
+### Efficient Exchange
+
+
