@@ -30,3 +30,12 @@ This gives crypto{8045,2803}.
 
 ### Point Addition
 
+```python
+E = EllipticCurve( GF(9739), [497, 1768] )
+P, Q, R = E.point((493, 5564)), E.point((1539, 4742)), E.point((4403,5202))
+s = (P+P+Q+R).xy()
+print(s)
+#(4215, 2162)
+```
+
+This gives crypto{4215, 2162}
