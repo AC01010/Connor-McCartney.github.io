@@ -8,6 +8,11 @@ excerpt: |
 
 This is my writeup of the [CryptoHack General challenges](https://cryptohack.org/challenges/general/).
 
+Useful functions: <br>
+
+bytes2long = lambda x: int.from_bytes(x, 'big') <br>
+long2bytes = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big') <br>
+
 
 ### ASCII
 
