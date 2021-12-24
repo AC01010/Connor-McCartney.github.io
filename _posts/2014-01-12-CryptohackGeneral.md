@@ -33,9 +33,10 @@ print(long2bytes(0x63727970746f7b596f755f77696c6c5f62655f776f726b696e675f7769746
 
 ### Base64
 
-```python
-import base64
-print(base64.b64encode(bytes.fromhex("72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf")).decode())
+```python  
+from base64 import b64encode
+long2bytes = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big')
+print(b64encode(long2bytes(0x72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf)).decode())
 #crypto/Base+64+Encoding+is+Web+Safe/
 ```
 
