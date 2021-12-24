@@ -25,9 +25,9 @@ print("".join([chr(i) for i in numbers]))
 
 ### Hex
 
-```python                                                                                                             
-flag = int("63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d", 16)
-print(flag.to_bytes((flag.bit_length() + 7) // 8, 'big').decode())
+```python    
+long2bytes = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big') 
+print(long2bytes(0x63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d))
 #crypto{You_will_be_working_with_hex_strings_a_lot}
 ```
 
