@@ -24,5 +24,15 @@ To solve this challenge we create a JWT using the 'none' algorithm.
 
 ```python
 import jwt #pip install pyjwt
-print(jwt.encode({'username':'','admin':'true'},'',algorithm='none'))
+print(jwt.encode({'username':'user','admin':'true'},'',algorithm='none'))
+```
+
+### JWT Secrets
+
+To solve this challenge we use the hint # TODO: PyJWT readme key, change later. <br>
+The readme key can be found at https://github.com/jpadilla/pyjwt/ and is "secret".
+
+```python
+import jwt #pip install pyjwt
+print(jwt.encode({'username':'user','admin':'true'},'secret',algorithm='HS256'))
 ```
