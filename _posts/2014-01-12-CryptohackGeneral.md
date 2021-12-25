@@ -12,7 +12,7 @@ Useful functions: <br>
 
 ```
 bytes2long = lambda x: int.from_bytes(x, 'big') 
-long2bytes = lambda x : x.to_bytes((x.bit_length() + 7) // 8, 'big') 
+long2bytes = lambda x: x.to_bytes((x.bit_length() + 7) // 8, 'big') 
 ```
 
 ### ASCII
