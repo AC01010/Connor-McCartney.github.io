@@ -36,3 +36,9 @@ The readme key can be found at https://github.com/jpadilla/pyjwt/ and is "secret
 import jwt #pip install pyjwt
 print(jwt.encode({'username':'user','admin':'true'},'secret',algorithm='HS256'))
 ```
+
+
+
+
+pip uninstall pyjwt
+pip install pyjwt==1.5.0
