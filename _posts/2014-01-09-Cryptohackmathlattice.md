@@ -19,3 +19,13 @@ print((3*(2*v - w)).dot_product(2*u))
 ```
 
 ### Size and Basis
+
+Using sage:
+
+```python
+v = vector( (4,6,2,5) )
+print(sqrt(v.dot_product(v)))
+#9
+```
+
+### Gram Schmidt
