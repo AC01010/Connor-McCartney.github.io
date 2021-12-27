@@ -48,6 +48,11 @@ print(jwt.encode({'username': 'user', 'admin': True}, PRIVATE_KEY, algorithm='HS
 #eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6dHJ1ZX0.kQ9Cl3pOTU1ERqB4GZi3G-4bKkHzpnycu6giuKHC0uQ
 ```
 
+### JSON in JSON
+
+Create a session with the following username    user", "admin": "True <br>
+This creates the body as {"admin": "False", "username": "user", "admin": "True"}.
+
 ### RSA or HMAC? Part 2
 
 ```python
