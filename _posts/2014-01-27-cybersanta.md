@@ -27,17 +27,12 @@ n1 = n2 so we can use common modulus attack.
 from Crypto.Util.number import long_to_bytes #pip install pycryptodome
 from math import gcd
 
-n_hex = "0xa96e6f96f6aedd5f9f6a169229f11b6fab589bf6..........."
-e1_hex = "0x10001"
-e2_hex = "0x23"
-c1_hex = "0x55cfe232610aa54dffcfb346117f0a38c77a33a..........."
-c2_hex = "0x79834ce329453d3c4af06789e9dd654e43c16a5..........."
+n = 0xa96e6f96f6aedd5f9f6a169229f11b6fab589bf6...........
+e1 = 0x10001
+e2 = 0x23
+c1 = 0x55cfe232610aa54dffcfb346117f0a38c77a33a...........
+c2 = 0x79834ce329453d3c4af06789e9dd654e43c16a5...........
 
-n = int(n_hex, 16)
-e1 = int(e1_hex, 16)
-e2 = int(e2_hex, 16)
-c1 = int(c1_hex, 16)
-c2 = int(c2_hex, 16)
 
 def attack(c1, c2, e1, e2, n):
     s1 = pow(e1, -1, e2)
