@@ -29,3 +29,45 @@ print(sqrt(v.dot_product(v)))
 ```
 
 ### Gram Schmidt
+
+Using sage:
+
+```python
+A = matrix([[4,1,3,-1], [2,1,-3,4], [1,0,-2,7], [6, 2, 9, -5]])
+x = A.gram_schmidt()[0][3][1]
+print(round(x, 5))
+#0.91611
+```
+
+### What's a Lattice?
+
+Using sage:
+
+```python
+A=matrix(3,3,[6, 2, -3, 5, 1, 4, 2, 7, 1])
+print(abs(A.det()))
+#255
+```
+
+### Gaussian Reduction
+
+Using sage:
+
+```python
+def gauss_reduction(v1,v2):
+    while true:
+        if v2.norm() < v1.norm():
+            tmp = v1
+            v1 = v2
+            v2 = tmp
+        m = floor(v1.dot_product(v2) / v1.dot_product(v1))
+        if m == 0:
+            return v1,v2
+        v2 = v2 - m * v1
+
+v1,v2 = gauss_reduction(vector([846835985, 9834798552]),vector([87502093, 123094980]))
+print(v1*v2)
+#7410790865146821
+```
+
+
