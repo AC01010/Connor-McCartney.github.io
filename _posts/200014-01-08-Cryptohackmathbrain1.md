@@ -25,5 +25,5 @@ Raise c1 to the power of e2:
 
 Raise c2 to the power of e1:
 
-(c2)<sup>e1</sup> = ((5p)<sup>e1</sup> + (7q)<sup>e2</sup>)<sup>e1</sup> <br>
+(c2)<sup>e1</sup> = ((5p)<sup>e2</sup> + (7q)<sup>e2</sup>)<sup>e1</sup> <br>
 (c2)<sup>e1</sup> = (5p)<sup>e1.e2</sup> + (7q)<sup>e1.e2</sup> mod N (middle terms cancel again)
