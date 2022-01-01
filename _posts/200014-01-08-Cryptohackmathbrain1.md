@@ -40,3 +40,5 @@ Now we are able to eliminate either (p)<sup>e1.e2</sup> or (q)<sup>e1.e2</sup>. 
 
 Let k = (3)<sup>-e1.e2</sup>(2)<sup>e1.e2</sup>- (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup> <br>
 Now we have k(p)<sup>e1.e2</sup> = (3)<sup>-e1.e2</sup>(c1)<sup>e2</sup> - (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> mod N
+
+Since p divides both k(p)<sup>e1.e2</sup> and N, p = gcd((3)<sup>-e1.e2</sup>(c1)<sup>e2</sup> - (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> mod N, N)
