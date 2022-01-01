@@ -8,6 +8,24 @@ excerpt: |
 
 This is my writeup of the [CryptoHack Mathematics challenges](https://cryptohack.org/challenges/maths/).
 
+### Successive Powers
+
+I looked for the smallest number in the list, 4. The next number is 836. <br>
+So 4x = 836 mod p <br>
+and if p > x (a guess): <br>
+x = 209
+
+We can substitute x into any 2 equations now, I'll do the first two: <br>
+588 * 209 = 665 mod p <br>
+588 * 209 - 665 = 0 mod p <br>
+
+665 * 209 = 216 mod p <br>
+665 * 209 - 216 = 0 mod p <br>
+
+Now p = gcd(588 * 209 - 665, 665 * 209 - 216) = 919
+
+This gives crypto{919, 209}
+
 ### Modular Binomials
 
 c1 = (2p + 3q)<sup>e1</sup> mod N <br>
