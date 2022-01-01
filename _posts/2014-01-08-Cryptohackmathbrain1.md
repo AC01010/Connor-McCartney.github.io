@@ -1,5 +1,5 @@
 ---
-title: MATHEMATICS - BRAINTEASERS PART 1
+title: MATHEMATICS - Brainteasers Part 1
 categories:
 - CryptoHack
 excerpt: |
