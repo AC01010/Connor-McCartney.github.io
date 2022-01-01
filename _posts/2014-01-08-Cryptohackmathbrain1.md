@@ -99,3 +99,108 @@ print(f'p: {p}')
 print(f'q: {q}')
 print("crypto{" + str(p) + "," + str(q) + "}")
 ```
+
+### Broken RSA
+
+```python
+from Crypto.Util.number import long_to_bytes 
+n = 27772857409875257529415990911214211975844307184430241451899407838750503024323367895540981606586709985980003435082116995888017731426634845808624796292507989171497629109450825818587383112280639037484593490692935998202437639626747133650990603333094513531505209954273004473567193235535061942991750932725808679249964667090723480397916715320876867803719301313440005075056481203859010490836599717523664197112053206745235908610484907715210436413015546671034478367679465233737115549451849810421017181842615880836253875862101545582922437858358265964489786463923280312860843031914516061327752183283528015684588796400861331354873
+e = 16
+c = 11303174761894431146735697569489134747234975144162172162401674567273034831391936916397234068346115459134602443963604063679379285919302225719050193590179240191429612072131629779948379821039610415099784351073443218911356328815458050694493726951231241096695626477586428880220528001269746547018741237131741255022371957489462380305100634600499204435763201371188769446054925748151987175656677342779043435047048130599123081581036362712208692748034620245590448762406543804069935873123161582756799517226666835316588896306926659321054276507714414876684738121421124177324568084533020088172040422767194971217814466953837590498718
+"""
+This is not normal RSA. e is not prime so there are multiple solutions.
+Also, since n is not easy to factorise I assume it is prime. 
+16 = 2^4, so we take the modular_sqrt 4 times.
+Compute all 16 roots of c.
+I did it manually but it can be done recursively if e is larger.  
+"""
+def legendre_symbol(a, p):
+    ls = pow(a, (p - 1) // 2, p)
+    return -1 if ls == p - 1 else ls
+def modular_sqrt(a, p):
+    if legendre_symbol(a, p) != 1:
+        return 0
+    elif a == 0:
+        return 0
+    elif p == 2:
+        return 0
+    elif p % 4 == 3:
+        return pow(a, (p + 1) / 4, p)
+    s = p - 1
+    e = 0
+    while s % 2 == 0:
+        s //= 2
+        e += 1
+    n = 2
+    while legendre_symbol(n, p) != -1:
+        n += 1
+    x = pow(a, (s + 1) // 2, p)
+    b = pow(a, s, p)
+    g = pow(n, s, p)
+    r = e
+    while True:
+        t = b
+        m = 0
+        for m in range(r):
+            if t == 1:
+                break
+            t = pow(t, 2, p)
+        if m == 0:
+            return x
+        gs = pow(g, 2 ** (r - m - 1), p)
+        g = (gs * gs) % p
+        x = (x * gs) % p
+        b = (b * g) % p
+        r = m
+
+x1 = modular_sqrt(c, n)
+x2 = n - x1
+
+y1 = modular_sqrt(x1, n)
+y2 = modular_sqrt(x2, n)
+y3 = n - y1
+y4 = n - y2
+
+z1 = modular_sqrt(y1, n)
+z2 = modular_sqrt(y2, n)
+z3 = modular_sqrt(y3, n)
+z4 = modular_sqrt(y4, n)
+z5 = n - z1
+z6 = n - z2
+z7 = n - z3
+z8 = n - z4
+
+w1 = modular_sqrt(z1, n)
+w2 = modular_sqrt(z2, n)
+w3 = modular_sqrt(z3, n)
+w4 = modular_sqrt(z4, n)
+w5 = modular_sqrt(z5, n)
+w6 = modular_sqrt(z6, n)
+w7 = modular_sqrt(z7, n)
+w8 = modular_sqrt(z8, n)
+w9 = n - w1
+w10 = n - w2
+w11 = n - w3
+w12 = n - w4
+w13 = n - w5
+w14 = n - w6
+w15 = n - w7
+w16 = n - w8
+
+#print(long_to_bytes(w1))
+#print(long_to_bytes(w2))
+#print(long_to_bytes(w3))
+#print(long_to_bytes(w4))
+#print(long_to_bytes(w5))
+#print(long_to_bytes(w6))
+#print(long_to_bytes(w7))
+#print(long_to_bytes(w8))
+print(long_to_bytes(w9)) #crypto{m0dul4r_squ4r3_r00t}
+#print(long_to_bytes(w10))
+#print(long_to_bytes(w11))
+#print(long_to_bytes(w12))
+#print(long_to_bytes(w13))
+#print(long_to_bytes(w14))
+#print(long_to_bytes(w15))
+#print(long_to_bytes(w16))
+```
