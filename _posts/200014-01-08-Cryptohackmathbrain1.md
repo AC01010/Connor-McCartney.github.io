@@ -36,4 +36,6 @@ Now we are able to eliminate either (p)<sup>e1.e2</sup> or (q)<sup>e1.e2</sup>. 
 (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> = (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup>(p)<sup>e1.e2</sup> + (q)<sup>e1.e2</sup> mod N <br>
 <br>
 (3)<sup>-e1.e2</sup>(c1)<sup>e2</sup> - (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> = (3)<sup>-e1.e2</sup>(2)<sup>e1.e2</sup>(p)<sup>e1.e2</sup> - (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup>(p)<sup>e1.e2</sup> mod N <br>
-(3)<sup>-e1.e2</sup>(c1)<sup>e2</sup> - (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> = (p)<sup>e1.e2</sup> ( (3)<sup>-e1.e2</sup>(2)<sup>e1.e2</sup>- (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup>  ) mod N
+(3)<sup>-e1.e2</sup>(c1)<sup>e2</sup> - (7)<sup>-e1.e2</sup>(c2)<sup>e1</sup> = (p)<sup>e1.e2</sup> ( (3)<sup>-e1.e2</sup>(2)<sup>e1.e2</sup>- (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup>  ) mod N 
+
+Let k = (3)<sup>-e1.e2</sup>(2)<sup>e1.e2</sup>- (7)<sup>-e1.e2</sup>(5)<sup>e1.e2</sup>
