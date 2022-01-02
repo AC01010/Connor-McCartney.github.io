@@ -77,7 +77,7 @@ rm -r ~/.cache/mozilla
 #### 9. Install whatever you want
 <br>
 ```
-paru -S brave-bin google-chrome downgrade discord vim btop
+paru -S brave-bin google-chrome downgrade discord vim btop grub-customizer
 ```
   
 #### 10. Remove krunner desktop 
@@ -92,3 +92,9 @@ run_command=false
 Advanced power settings > Stop charging only once below > 80% <br>
 Energy saving > On AC Power > turn everything off except dim screen and energy saving <br>
 Screen locking > disable
+
+#### 12. Grub Customizer
+
+Disable look for other operating systems. <br>
+Boot default entry after 2 seconds. <br>
+Kernel parameters: quiet loglevel=1 nowatchdog nvme_load=YES fsck.mode=skip modprobe.blacklist=iTCO_wdt
