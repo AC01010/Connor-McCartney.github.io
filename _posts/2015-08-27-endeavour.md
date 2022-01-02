@@ -77,7 +77,7 @@ rm -r ~/.cache/mozilla
 #### 9. Install whatever you want
 <br>
 ```
-paru -S librewolf google-chrome downgrade discord vim btop grub-customizer
+paru -S brave-bin google-chrome downgrade discord vim btop grub-customizer
 ```
   
 #### 10. Remove krunner desktop 
