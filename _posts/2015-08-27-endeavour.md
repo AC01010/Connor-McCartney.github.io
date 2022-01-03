@@ -1,13 +1,15 @@
 ---
-title: How I Customise Arch KDE Plasma
+title: How I Customise EndeavourOS KDE Plasma
 categories:
 - Other
 excerpt: |
   
 ---
 
+#### 1. Update mirrors
+<br>
 
-#### 1. Setup auto login
+#### 2. Remove auto startup page
 <br>
 
 #### 3. Update system
