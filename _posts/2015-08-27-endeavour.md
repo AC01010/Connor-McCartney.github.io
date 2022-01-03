@@ -107,3 +107,7 @@ Kernel parameters: quiet loglevel=1 nowatchdog nvme_load=YES fsck.mode=skip modp
 #### 14. Desktop effects
 
 Turn on wobbly windows, magic lamp, translucency, fall apart
+
+#### 15. Fix monitor bug
+
+Autostart > Add login script > killall plasmashell; sleep 3; plasmashell
