@@ -110,4 +110,9 @@ Turn on wobbly windows, magic lamp, translucency, fall apart
 
 #### 15. Fix monitor bug
 
-Autostart > Add login script > killall plasmashell; sleep 3; plasmashell
+Autostart > Add login script:
+
+```
+#!/bin/bash
+sleep 3; killall plasmashell; sleep 3; plasmashell
+```
