@@ -101,4 +101,4 @@ Disable look for other operating systems. <br>
 Boot default entry after 1 second. <br>
 Kernel parameters: quiet loglevel=1 nowatchdog nvme_load=YES fsck.mode=skip modprobe.blacklist=iTCO_wdt
 
-#### 13. Mirage global theme, nebula wallpaper, nebula splash
+#### 13. Mirage global theme, nebula desktop, nebula splash
