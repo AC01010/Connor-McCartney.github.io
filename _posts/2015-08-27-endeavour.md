@@ -114,5 +114,5 @@ Autostart > Add login script:
 
 ```
 #!/bin/bash
-sleep 3; killall plasmashell; sleep 3; plasmashell
+killall plasmashell; sleep 3; plasmashell
 ```
