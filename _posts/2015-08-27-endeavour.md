@@ -10,7 +10,7 @@ excerpt: |
 <br>
 
 #### 2. Remove auto startup page and notifications
-
+<br>
 ```
 sudo pacman -Rsn eos-update-notifier
 ```
