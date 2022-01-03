@@ -98,5 +98,7 @@ Screen locking > disable
 #### 12. Grub Customizer
 
 Disable look for other operating systems. <br>
-Boot default entry after 2 seconds. <br>
+Boot default entry after 1 second. <br>
 Kernel parameters: quiet loglevel=1 nowatchdog nvme_load=YES fsck.mode=skip modprobe.blacklist=iTCO_wdt
+
+#### 13. Mirage global theme and nebula splash
