@@ -9,7 +9,7 @@ excerpt: |
 #### 1. Update mirrors
 <br>
 
-#### 2. Remove auto startup page
+#### 2. Remove auto startup page and notifications
 <br>
 
 #### 3. Update system
