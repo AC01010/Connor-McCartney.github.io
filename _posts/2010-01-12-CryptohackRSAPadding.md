@@ -119,4 +119,6 @@ Given: <br>
 ```
 pad100 adds zeros to the end of the flag until the length is 100 bytes. Appending one zero to the end (1 byte) is equivalent to multiplying the plaintext by 2<sup>8</sup>. <br>
 The flag length is 43, so 57 zeros were appended. Thus the plaintext was encrypted as: <br>
-c = (m<sup>8*57*3</sup>) mod n
+c = (m * 2<sup>8 * 57</sup>)<sup>3</sup> mod n <br>
+Solving for m:
+m = 
