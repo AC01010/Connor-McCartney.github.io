@@ -217,10 +217,11 @@ This gives crypto{bon3h5_4tt4ck_i5_sr0ng3r_th4n_w13n3r5}.
 ### Endless Emails
 
 We can use [Hadstad's Broadcast Attack](https://en.wikipedia.org/wiki/Coppersmith's_attack#H%C3%A5stad's_broadcast_attack) to solve this challenge. 
+At least e messgaes should be the same (so we need to find the 3 out of 8 given messages that are the same) and use the chinese remainder theorem.
 
 ```python
 from Crypto.Util.number import long_to_bytes
-from sympy import cbrt
+from sympy.ntheory.modular import crt
 from itertools import combinations
 
 def nth_root(x,n):
@@ -299,17 +300,17 @@ c7 = int("""15239683995712538665992887055453717247160229941400011601942125542239
 C = [c1,c2,c3,c4,c5,c6,c7]
 
 for i in list(combinations([i for i in range(7)],3)):
-	n1 = N[i[0]]
-	n2 = N[i[1]]
-	n3 = N[i[2]]
-	c1 = C[i[0]]
-	c2 = C[i[1]]
-	c3 = C[i[2]]
+        n1 = N[i[0]]
+        n2 = N[i[1]]
+        n3 = N[i[2]]
+        c1 = C[i[0]]
+        c2 = C[i[1]]
+        c3 = C[i[2]]
 
-	m = long_to_bytes(nth_root((c1*pow(n1*n2*n3//n1,-1,n1)*n1*n2*n3//n1+c2*pow(n1*n2*n3//n2,-1,n2)*n1*n2*n3//n2+c3*pow(n1*n2*n3//n3,-1,n3)*n1*n2*n3//n3)%(n1*n2*n3),3))
-	if b'crypto' in m:
-		print(m.decode())
-		break
+        m = long_to_bytes(nth_root(crt((n1,n2,n3),(c1,c2,c3))[0],3))
+        if b'crypto' in m:
+                print(m.decode())
+                break
 ```
 
 This gives crypto{1f_y0u_d0nt_p4d_y0u_4r3_Vuln3rabl3}.
