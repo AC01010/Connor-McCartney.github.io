@@ -99,3 +99,22 @@ print(long2bytes(m).decode())
 ```
 
 This gives crypto{linear_padding_isnt_padding}.
+
+### Null or Never
+
+Given: <br>
+```python
+    from Crypto.PublicKey import RSA
+    from Crypto.Util.number import bytes_to_long
+    FLAG = b"crypto{???????????????????????????????????}"
+    def pad100(msg):
+        return msg + b'\x00' * (100 - len(msg))
+    key = RSA.generate(1024, e=3)
+    n, e = key.n, key.e
+    m = bytes_to_long(pad100(FLAG))
+    c = pow(m, e, n)
+    print(f"n = {n}")
+    print(f"e = {e}")
+    print(f"c = {c}")
+```
+pad100 adds zeros to the end of the flag until the length is 100 bytes. Appending one zero to the end (1 byte) is equivalent to multiplying the flag by 2<sup>8</sup>. <br>
