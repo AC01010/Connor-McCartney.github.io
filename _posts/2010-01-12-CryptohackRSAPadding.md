@@ -61,9 +61,19 @@ listener.start_server(port=13386)
 SOLUTION
 
 At the bottom of their script it says the challenge function is called on your JSON input. 
-So to get an output it seems you have to run "nc socket.cryptohack.org 13386" <br>
-and then send {  "option" : "get_flag" }. You can run this many times on the same connection and get different values for <br>
-encrypted_flag (c) and padding, but the same value for modulus (n). If you disconnect and reconnect you'll get a different modulus. 
+So to get an output run:
+<br>
+```
+nc socket.cryptohack.org 13386
+```
+<br>
+and then send :
+<br>
+```
+{"option" : "get_flag"}
+```
+<br>
+You can run this many times on the same connection and get different values for encrypted_flag (c) and padding, but the same value for modulus (n). If you disconnect and reconnect you'll get a different modulus too. 
 
 In the script, we see e = 11. We are given a and b for padding (which changes). Messages are encrypted as <br>
 c1 = (a1 * x + b1)<sup>11</sup> mod n <br>
