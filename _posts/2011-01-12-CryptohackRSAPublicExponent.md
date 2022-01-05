@@ -217,7 +217,7 @@ This gives crypto{bon3h5_4tt4ck_i5_sr0ng3r_th4n_w13n3r5}.
 ### Endless Emails
 
 We can use [Hadstad's Broadcast Attack](https://en.wikipedia.org/wiki/Coppersmith's_attack#H%C3%A5stad's_broadcast_attack) to solve this challenge. 
-At least e messgaes should be the same (so we need to find the 3 out of 8 given messages that are the same) and use the chinese remainder theorem.
+At least e messgaes should be the same (so we need to find the 3 out of 7 given messages that are the same) and use the chinese remainder theorem.
 
 ```python
 from Crypto.Util.number import long_to_bytes
