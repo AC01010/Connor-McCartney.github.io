@@ -51,3 +51,6 @@ MSG = 'We are hyperreality and Jack and we own CryptoHack.org'
 DIGEST = emsa_pkcs1_v15.encode(MSG.encode(), 256)
 print(bytes_to_long(DIGEST))
 ```
+
+s = m1<sup>?</sup> mod n
+s = m2<sup>?</sup> mod n
