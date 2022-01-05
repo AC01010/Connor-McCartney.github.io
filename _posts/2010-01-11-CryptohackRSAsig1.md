@@ -50,7 +50,7 @@ bytes2long = lambda x: int.from_bytes(x, 'big')
 from pkcs1 import emsa_pkcs1_v15
 MSG = 'We are hyperreality and Jack and we own CryptoHack.org'
 DIGEST = emsa_pkcs1_v15.encode(MSG.encode(), 256)
-print(bytes_to_long(DIGEST))
+print(bytes2long(DIGEST))
 ```
 
 s = m1<sup>?</sup> mod n <br>
