@@ -10,3 +10,9 @@ This is my writeup of the [CryptoHack RSA challenges](https://cryptohack.org/cha
 
 
 ### Signing Server
+
+Connect at nc socket.cryptohack.org 13374. <br>
+Send: <br>
+```
+{"option":"get_secret"}
+```
