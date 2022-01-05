@@ -1,5 +1,5 @@
 ---
-title: SYMMETRIC CIPHERS - How AES Works
+title: SYMMETRIC CIPHERS - Symmetric Starter
 categories:
 - CryptoHack
 excerpt: |
@@ -8,4 +8,7 @@ excerpt: |
 
 This is my writeup of the [CryptoHack Symmetric Ciphers challenges](https://cryptohack.org/challenges/aes/).
 
-### Keyed Permutations
+### Modes of Operation Starter
+
+
+
