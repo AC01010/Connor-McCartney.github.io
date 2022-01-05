@@ -66,13 +66,11 @@ So to get an output run:
 ```
 nc socket.cryptohack.org 13386
 ```
-<br>
 and then send :
 <br>
 ```
 {"option" : "get_flag"}
 ```
-<br>
 You can run this many times on the same connection and get different values for encrypted_flag (c) and padding, but the same value for modulus (n). If you disconnect and reconnect you'll get a different modulus too. 
 
 In the script, we see e = 11. We are given a and b for padding (which changes). Messages are encrypted as <br>
