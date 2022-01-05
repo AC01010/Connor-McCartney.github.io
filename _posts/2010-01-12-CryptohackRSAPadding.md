@@ -129,7 +129,6 @@ m = cbrt(x + kn)
 
 Solve script:
 ```python
-from gmpy2 import iroot
 long2bytes = lambda x: x.to_bytes((x.bit_length() + 7) // 8, 'big')
 def nth_root(x,n):
     high = 1
