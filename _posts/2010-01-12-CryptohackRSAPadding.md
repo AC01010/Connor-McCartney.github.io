@@ -122,4 +122,37 @@ The flag length is 43, so 57 zeros were appended. Thus the plaintext was encrypt
 c = (m * 2<sup>8 * 57</sup>)<sup>3</sup> mod n <br>
 Solving for m: <br>
 c = (m<sup>3</sup> * 2<sup>8 * 57 * 3</sup>) mod n <br>
-m<sup>3</sup> = (c * 2<sup>8 * 57 * 3</sup>) mod n <br>
+m<sup>3</sup> = (c * 2<sup>-8 * 57 * 3</sup>) mod n <br>
+Let x = (c * 2<sup>-8 * 57 * 3</sup>) mod n <br>
+m<sup>3</sup> = x + kn <br>
+m = cbrt(x + kn)
+
+Solve script:
+```python
+from gmpy2 import iroot
+long2bytes = lambda x: x.to_bytes((x.bit_length() + 7) // 8, 'big')
+def nth_root(x,n):
+    high = 1
+    while high ** n <= x:
+        high *= 2
+    low = high // 2
+    while low < high:
+        mid = int((low + high) // 2) + 1
+        if low < mid and mid ** n < x:
+            low = mid
+        elif high > mid and mid ** n > x:
+            high = mid
+        else:
+            return mid
+    return mid + 1
+
+n=95341235345618011251857577682324351171197688101180707030749869409235726634345899397258784261937590128088284421816891826202978052640992678267974129629670862991769812330793126662251062120518795878693122854189330426777286315442926939843468730196970939951374889986320771714519309125434348512571864406646232154103
+c=63476139027102349822147098087901756023488558030079225358836870725611623045683759473454129221778690683914555720975250395929721681009556415292257804239149809875424000027362678341633901036035522299395660255954384685936351041718040558055860508481512479599089561391846007771856837130233678763953257086620228436828
+x  = ((c * pow(2, -8*57*3,n))) % n
+for k in range(100):
+    m = nth_root(x + k*n, 3)
+    if b"crypto" in long2bytes(m):
+        print(long2bytes(m).decode())
+        break
+#crypto{n0n_574nd4rd_p4d_c0n51d3r3d_h4rmful}
+```
