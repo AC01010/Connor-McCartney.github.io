@@ -76,3 +76,5 @@ print((Q * d).xy()[0])
 ```
 
 and we can decrypt with the decrypt script from other challenge. 
+
+crypto{H3ns3l_lift3d_my_fl4g!}
