@@ -68,3 +68,11 @@ print(P.order() == p)
 d = SmartAttack(Q, P, p)
 print(d)
 ```
+
+This isn't working, but once we find d, shared secret equals
+
+```python
+print((Q * d).xy()[0])
+```
+
+and we can decrypt with the decrypt script from other challenge. 
