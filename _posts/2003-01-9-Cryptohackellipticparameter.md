@@ -10,8 +10,27 @@ This is my writeup of the [CryptoHack Elliptic Curves challenges](https://crypto
 
 ### Smooth Criminal
 
-We can use the Pohlig-Hellman algorithm as the curve is smooth (hint given in title).
+We can use the Pohlig-Hellman algorithm as the curve is smooth (hint given in title). Sage's discrete_log has this built in.
 
+```python
+p = 310717010502520989590157367261876774703
+a = 2
+b = 3
+E = EllipticCurve(GF(p), [a,b])
+
+G = E(179210853392303317793440285562762725654, 105268671499942631758568591033409611165)
+# Bob's public key
+QB = E(272640099140026426377756188075937988094, 51062462309521034358726608268084433317)
+# Our public key
+QA = E(280810182131414898730378982766101210916, 291506490768054478159835604632710368904)
+
+#Attack to find Bob's private key
+nB = G.discrete_log(QB)
+
+#shared secret
+print((QA * nB).xy()[0])
+```
+With this we can decrypt with the usual given decrypt script from other challenges. <br>
 crypto{n07_4ll_curv3s_4r3_s4f3_curv3s}
 
 ### Exceptional Curves
