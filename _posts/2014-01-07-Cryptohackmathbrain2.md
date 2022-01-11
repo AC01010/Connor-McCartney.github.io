@@ -12,6 +12,8 @@ This is my writeup of the [CryptoHack Mathematics challenges](https://cryptohack
 
 ### Unencryptable
 
+This challenge was a matter of bruteforcing to factorise N using gcd. 
+
 ```python
 from math import gcd
 from Crypto.Util.number import long_to_bytes
