@@ -34,3 +34,9 @@ print(long_to_bytes(m).decode())
 #crypto{R3m3mb3r!_F1x3d_P0iNts_aR3_s3crE7s_t00}
 ```
 
+### Cofactor Cofantasy
+
+This challenge boils down to distinguising if a given number c is either: <br>
+a) random <br>
+b) equal to g<sup>x</sup> mod N
+
