@@ -8,6 +8,18 @@ excerpt: |
 
 This is my writeup of the [CryptoHack Mathematics challenges](https://cryptohack.org/challenges/maths/).
 
+### Ellipse Curve Cryptography
+
+Here is an incorrect implementation of ellipse curve cryptography. Regular scalar multiplication has been used, not elliptic curve point multiplication. <br>
+
+```python
+private = random.randint(1, p-1)
+G = (29394812077144852405795385333766317269085018265469771684226884125940148, 
+     94108086667844986046802106544375316173742538919949485639896613738390948)
+public = scalar_multiplication(G, private)
+```
+
+
 ### Unencryptable
 
 ```python
