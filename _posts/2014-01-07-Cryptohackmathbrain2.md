@@ -26,9 +26,6 @@ for i in range(1, 16):
     if gcd(m ** (2 ** i) - 1, N) != 1:
         p = gcd(m ** (2 ** i) - 1, N)
         break
-    if gcd(m ** (2 ** i) + 1, N) != 1:
-        p = gcd(m ** (2 ** i) + 1, N)
-        break
 q = N // p
 phi = (p - 1) * (q - 1)
 d = pow(e, -1, phi)
