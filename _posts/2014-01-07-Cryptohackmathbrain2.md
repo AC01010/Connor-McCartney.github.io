@@ -8,9 +8,6 @@ excerpt: |
 
 This is my writeup of the [CryptoHack Mathematics challenges](https://cryptohack.org/challenges/maths/).
 
-### Ellipse Curve Cryptography
-
-(A.x)<sup>2</sup> - 529 * (A.y)<sup>2</sup> = ((B.x)<sup>2</sup> - 529 * (B.y)<sup>2</sup>) mod p
 
 
 ### Unencryptable
