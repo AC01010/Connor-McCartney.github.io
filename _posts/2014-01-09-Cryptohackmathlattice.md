@@ -102,7 +102,7 @@ for v in B:
    if S == c:
       break
 
-flag = "".join(['1' if i==-1 else '0' for i in v[-2:0:-1]]) #binary string
+flag = "".join(['1' if i==-1 else '0' for i in v[-2::-1]]) #binary string
 print(''.join(chr(int(flag[i*8: i*8+8],2)) for i in range(len(flag)//8)))
 #crypto{my_kn4ps4ck_1s_l1ghtw31ght}
 ```
