@@ -99,7 +99,7 @@ And the message "Why is everyone so obsessed with multiplying two primes for RSA
 SOLUTION
 
 Here n is prime, not the product of two primes. This allows us to work out phi easily.  <br>
-phi(n) represents the number of non-negative integers less than n that are coprime to n. And if n is prime, every number lower than n will be coprime to n! <br>
+phi(n) represents the number of non-negative integers less than n that are coprime to n. And if n is prime, every number lower than n will be coprime to n! (exclamation, not factorial*)<br>
 Therefore phi = n-1.
 
 ```python
