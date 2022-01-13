@@ -17,4 +17,6 @@ Looking on [the Birthday Problem Wikipedia](https://en.wikipedia.org/wiki/Birthd
 
 p = 1 - ((d - 1)/d)<sup>n<sup>
 
-  <mfrac>1 3</mfrac>
+Now rearrange for n:
+
+((d - 1)/d)<sup>n<sup> = 1 - p
