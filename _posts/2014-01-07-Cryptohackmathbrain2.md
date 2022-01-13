@@ -57,4 +57,14 @@ print(pow(g, M, N)) # does not equal 1
 print(pow(g, 2*M, N)) # equals 1
 ```
 
+Let k = g<sup>M</sup> mod N. The fact that we know N is a product of distinct primes and that k is a square root of 1 mod N
+allows us to factor N:
+
+```python
+from math import gcd
+M = phi//(2 ** 16)
+k = pow(g, M, N)
+a = gcd(N, k+1)
+b = gcd(N, k-1)
+```
 
