@@ -38,5 +38,23 @@ print(long_to_bytes(m).decode())
 
 This challenge boils down to distinguising if a given number c is either: <br>
 a) random <br>
-b) equal to g<sup>x</sup> mod N
+b) equal to g<sup>x</sup> mod N, for some random integer x
+
+I started by finding divisors of phi to work with. 
+
+```python
+for i in range(1000):
+    if phi % (2**i) == 0:
+        print(i)
+```
+
+The largest I found was 2<sup>16</sup>. Now let M = phi//(2 ** 16). <br>
+
+Next I looked at g<sup>M</sup> mod N and g<sup>2M</sup> mod N:
+
+```python
+print(pow(g, M, N)) # does not equal 1
+print(pow(g, 2*M, N)) # equals 1
+```
+
 
