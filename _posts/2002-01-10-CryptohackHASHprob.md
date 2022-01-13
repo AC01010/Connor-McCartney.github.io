@@ -30,3 +30,18 @@ p = 0.5
 d = 2**11
 print(log(1-p) / log((d-1)/d))
 ```
+### Jack's Birthday Confusion
+
+Bit array length = 11 <br>
+p = probability of collision = 0.75
+
+Looking on [the Birthday Problem Wikipedia](https://en.wikipedia.org/wiki/Birthday_problem) I found the following formula under "Probability of a shared birthday (collision)":
+
+n = sqrt(2d * ln(1/(1-p)))
+
+```python
+p = 0.75
+d = 2**11
+print(sqrt(2*d*log(1/(1-p))))
+#76
+```
