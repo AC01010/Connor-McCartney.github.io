@@ -44,7 +44,7 @@ print(f"secret: {B**n}")
 Connect at nc socket.cryptohack.org 13373.
 
 From the title of the challenge I assume Bob's private key is static. Since we have A, which is g<sup>a</sup>, if we send Bob g=A, he will compute:
-B = A<sup>b</sup> = g<sup>a</sup><sup>b</sup> = g<sup>ab</sup>< <br>
+B = A<sup>b</sup> = g<sup>a</sup><sup>b</sup> = g<sup>ab</sup> <br>
 
 Which is the shared secret. This can be used to decrypt the ciphertext intercepted from Alice.
   
