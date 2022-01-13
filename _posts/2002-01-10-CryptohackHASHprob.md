@@ -16,3 +16,5 @@ p = probability of collision = 0.5
 Looking on [the Birthday Problem Wikipedia](https://en.wikipedia.org/wiki/Birthday_problem) I found the following formula under "Same birthday as you":
 
 p = 1 - ((d - 1)/d)<sup>n<sup>
+
+  <mfrac>1 3<mfrac>
