@@ -23,5 +23,5 @@ s = (a * B) % p
 print(s)
 
 #use given decrypt script
-crypto{cycl1c_6r0up_und3r_4dd1710n?}
+#crypto{cycl1c_6r0up_und3r_4dd1710n?}
 ```
