@@ -17,4 +17,4 @@ Looking on [the Birthday Problem Wikipedia](https://en.wikipedia.org/wiki/Birthd
 
 p = 1 - ((d - 1)/d)<sup>n<sup>
 
-  <mfrac>1 3<mfrac>
+  <mfrac>1 3</mfrac>
