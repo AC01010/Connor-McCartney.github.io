@@ -62,9 +62,11 @@ allows us to factor N:
 
 ```python
 from math import gcd
-M = phi//(2 ** 16)
+M = phi//(2**16)
 k = pow(g, M, N)
 a = gcd(N, k+1)
 b = gcd(N, k-1)
 ```
 
+We can observe g<sup>M</sup> = 1 mod b. <br>
+Now if g<sup>M</sup> mod b != c<sup>M</sup> mod b, we can be pretty confident c is random!
