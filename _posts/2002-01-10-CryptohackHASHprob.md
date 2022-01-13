@@ -40,6 +40,7 @@ Looking on [the Birthday Problem Wikipedia](https://en.wikipedia.org/wiki/Birthd
 n = sqrt(2d * ln(1/(1-p)))
 
 ```python
+from math import log, sqrt
 p = 0.75
 d = 2**11
 print(sqrt(2*d*log(1/(1-p))))
