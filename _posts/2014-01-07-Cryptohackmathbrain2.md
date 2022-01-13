@@ -69,4 +69,4 @@ b = gcd(N, k-1)
 ```
 
 We can observe g<sup>M</sup> = 1 mod b. <br>
-Now if g<sup>M</sup> mod b != c<sup>M</sup> mod b, we can be pretty confident c is random!
+Now if g<sup>M</sup> mod b == c<sup>M</sup> mod b, we can be pretty confident c is not random!
