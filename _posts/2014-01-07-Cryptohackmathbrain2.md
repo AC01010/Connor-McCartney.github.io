@@ -110,3 +110,16 @@ for i in range(len(b"crypto{???????????????????????????????????}")*8):
         print(long2bytes(int(flag, 2))[::-1])
 #crypto{0ver3ng1neering_ch4lleng3_s0lution$}
 ```
+
+### Real Eisenstein
+
+```python
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
+M = Matrix(28, 29)
+M[0,0], M[0,1] = 1350995397927355657956786955603012410260017344805998076702828160316695004588429433, 1
+for i in range(27):
+    M[i+1,0] = round(2^256*sqrt(primes[i])); M[i+1,i+2] = 1
+r = M.LLL()
+print("".join([chr(-c) for c in r[0][2:]]))
+#crypto{r34l_t0_23D_m4p}
+```
