@@ -50,7 +50,7 @@ print(bytes.fromhex(json_recv()["encrypted_data"]))
 
 ### Bruce Schneier's Password
 
-A solution to Bruce 2 is a solution to this.
+A solution to Bruce 2 is also a solution to Bruce 1.
 
 ### Bruce Schneier's Password: Part 2
 
