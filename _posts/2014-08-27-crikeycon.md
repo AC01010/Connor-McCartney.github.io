@@ -46,7 +46,7 @@ This gives n = 4290639633996267716557385332009265040461674354008108198271. <br>
 Factoring with http://factordb.com/ gives p = 63539306977486994912339790113 and <br>
 q = 67527328170521450591465143967. <br>
 
-Then I generated the public key. 
+Then I generated the private key. 
 ```python
 import pyasn1.codec.der.encoder #pip install pyasn1
 import pyasn1.type.univ
