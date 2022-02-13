@@ -66,12 +66,7 @@ SOLUTION
 
 In the file used to encrypt the pdf, we see enc = (a * byte + b) % mod. <br>
 I'll rename enc to e (encrypted) and byte to l (the original letter). It's also given that mod = 256. <br>
-Now it's time to do some math (modular arithmetic). We have e = (a * l + b) mod 256, and need to solve for l. <br>
-
-First I subtracted b from both sides (because if a = b mod n, then a+x = b+x mod n) <br>
-Next I swapped e-b and a * l (because if a = b mod n, then b = a mod n)    <br>
-Next I multiplied both sides by a<sup>-1</sup> (the modular inverse of a) <br>
-Now it makes sense why the encryption first checked that gcd(a, mod) == 1 when generating a random number for a, because this ensures that a has a modular inverse. 
+We have e = (a * l + b) mod 256, and need to solve for l. <br>
 
 e - b = (a * l) mod 256 <br>
 
