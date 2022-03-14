@@ -15,4 +15,4 @@ Recover private key <https://github.com/ius/rsatool/blob/master/rsatool.py> <br>
 Python progress bar tqdm <https://github.com/tqdm/tqdm> <br>
 ssh into windows <https://theitbros.com/ssh-into-windows/> <br>
 ssh into linux <https://www.youtube.com/watch?v=5MYrES7b8mE&list=WL&index=1&t=137s> <br>
-best chromium adblocker <https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en> <br>
+best adblocker <https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en> <br>
