@@ -18,3 +18,4 @@ ssh into linux <https://www.youtube.com/watch?v=5MYrES7b8mE&list=WL&index=1&t=13
 best adblocker <https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en> <br>
 MS office alternative <https://www.onlyoffice.com/?affChecked=1> <br>
 AI substitution cipher solver <https://www.guballa.de/substitution-solver> <br>
+After Fedora Install <https://www.youtube.com/watch?v=RrRpXs2pkzg&list=WL&index=9> <br>
