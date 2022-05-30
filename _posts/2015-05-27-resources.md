@@ -19,3 +19,4 @@ best adblocker <https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdl
 MS office alternative <https://www.onlyoffice.com/?affChecked=1> <br>
 AI substitution cipher solver <https://www.guballa.de/substitution-solver> <br>
 After Fedora Install <https://www.youtube.com/watch?v=RrRpXs2pkzg>  * but don't set Fastestmirror=true  <br>
+Integer Sequences Encyclopedia <https://oeis.org/> <br>
